@@ -2,20 +2,20 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Baokhoa",
+  lastName: "Vu",
+  name: `Baokhoa Vu`,
+  role: "Full Stack Developer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "baokhoavu@example.com",
+  location: "America/New_York", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
   display: true,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  description: <>My weekly newsletter about technology and development</>,
 };
 
 const social: Social = [
@@ -31,7 +31,7 @@ const social: Social = [
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/baokhoadvu/",
     essential: true,
   },
   {
@@ -60,7 +60,7 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Developing innovative cloud solutions and integrations</>,
   featured: {
     display: true,
     title: (
@@ -76,7 +76,7 @@ const home: Home = {
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
+    I'm Baokhoa, a full stack developer with over 7 years of experience in freelancing and working for a non-profit digital marketing agency. I specialize in developing and integrating cloud-based management software solutions.
 </>
   ),
 };
@@ -102,9 +102,7 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Baokhoa is a full stack developer with over 7 years of experience ranging from freelancing to working for a non-profit digital marketing agency. He has developed and integrated many different cloud-based management software using unique out-of-the-box solutions tailored to each client. These developments include building reusable integration scripts, interactive dashboards, mobile responsive email development, and detailed reports utilizing custom queries.
       </>
     ),
   },
@@ -113,41 +111,40 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Non-Profit Digital Marketing Agency",
+        timeframe: "2017 - Present",
+        role: "Full Stack Developer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Developed and integrated cloud-based management software solutions, utilizing unique out-of-the-box approaches tailored to client needs.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Built reusable integration scripts, interactive dashboards, and mobile responsive email systems.
+          </>,
+          <>
+            Created detailed reports with custom queries to enhance data analysis and decision-making.
           </>,
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
           {
             src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
+            alt: "Project image",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Freelance",
+        timeframe: "2017 - Present",
+        role: "Full Stack Developer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Delivered custom cloud-based solutions for various clients, focusing on scalable and efficient software integrations.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Developed interactive web applications and automated systems to streamline business processes.
           </>,
         ],
         images: [],
@@ -159,12 +156,12 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Self-Taught Developer",
+        description: <>Continuous learning in full stack development and cloud technologies.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Online Courses",
+        description: <>Completed various certifications in software development and digital marketing.</>,
       },
     ],
   },
@@ -173,14 +170,18 @@ const about: About = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "JavaScript/TypeScript",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Proficient in building dynamic web applications with modern JavaScript frameworks.</>
         ),
         tags: [
           {
-            name: "Figma",
-            icon: "figma",
+            name: "JavaScript",
+            icon: "javascript",
+          },
+          {
+            name: "TypeScript",
+            icon: "typescript",
           },
         ],
         // optional: leave the array empty if you don't want to display images
@@ -200,22 +201,22 @@ const about: About = {
         ],
       },
       {
-        title: "Next.js",
+        title: "Cloud Platforms",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>Experience with various cloud-based management software and integration solutions.</>
         ),
         tags: [
           {
-            name: "JavaScript",
-            icon: "javascript",
+            name: "AWS",
+            icon: "aws",
           },
           {
-            name: "Next.js",
-            icon: "nextjs",
+            name: "Node.js",
+            icon: "nodejs",
           },
           {
-            name: "Supabase",
-            icon: "supabase",
+            name: "React",
+            icon: "react",
           },
         ],
         // optional: leave the array empty if you don't want to display images
