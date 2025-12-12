@@ -1,0 +1,450 @@
+/* Gaming Developer Portfolio Themes */
+/* Add this to your main CSS file or import in layout.tsx */
+
+/* Theme Option 4: 8-Bit Retro Gaming */
+.theme-8bit {
+  --font-family-heading: 'Courier New', monospace;
+  --gaming-primary: #00ff41;
+  --gaming-secondary: #ff0080;
+  --gaming-accent: #ffff00;
+  --gaming-bg: #0a0a0a;
+  
+  /* 8-bit style borders */
+  --border-radius-small: 0px;
+  --border-radius-medium: 0px;
+  --border-radius-large: 0px;
+  
+  /* Pixelated effects */
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Esports Gaming Arena Theme */
+.theme-violet-neon {
+  --gaming-glow: 0 0 30px rgba(0, 255, 255, 0.6);
+  --gaming-text-glow: 0 0 15px rgba(0, 255, 255, 0.9);
+  --gaming-accent-glow: 0 0 20px rgba(255, 0, 128, 0.7);
+  --electric-blue: #00ffff;
+  --neon-purple: #8a2be2;
+  --cyber-pink: #ff0080;
+  
+  /* Dark gaming arena background */
+  background: linear-gradient(135deg,
+    #0d1421 0%,
+    #1a1a2e 25%,
+    #16213e 50%,
+    #0f0f23 75%,
+    #0a0a0a 100%
+  ) !important;
+  
+  /* Electric grid overlay */
+  background-image: 
+    linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  
+  /* Override page background */
+  min-height: 100vh;
+}
+
+/* Force dark gaming theme on all child elements */
+.theme-violet-neon * {
+  --page-background: #0d1421 !important;
+  --page-background-translucent: rgba(13, 20, 33, 0.9) !important;
+  --neutral-background: rgba(26, 26, 46, 0.4) !important;
+  --brand-background: rgba(0, 255, 255, 0.1) !important;
+  --neutral-on-background: #ffffff !important;
+  --neutral-on-background-weak: #e0e0e0 !important;
+  --neutral-on-background-medium: #f0f0f0 !important;
+  --neutral-on-background-strong: #ffffff !important;
+}
+
+.theme-violet-neon,
+.theme-violet-neon * {
+  color: #ffffff !important;
+}
+
+.theme-violet-neon .hero-title,
+.theme-violet-neon h1,
+.theme-violet-neon h2,
+.theme-violet-neon h3,
+.theme-violet-neon p,
+.theme-violet-neon span,
+.theme-violet-neon div {
+  color: #ffffff !important;
+  text-shadow: var(--gaming-text-glow);
+}
+
+.theme-violet-neon .btn-primary,
+.theme-violet-neon .card:hover {
+  box-shadow: var(--gaming-glow);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Static electric gaming arena effects */
+.theme-violet-neon::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(ellipse at 25% 25%, rgba(0, 255, 255, 0.12) 0%, transparent 40%),
+    radial-gradient(ellipse at 75% 75%, rgba(138, 43, 226, 0.1) 0%, transparent 35%),
+    radial-gradient(ellipse at 50% 20%, rgba(255, 0, 128, 0.06) 0%, transparent 30%);
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+.theme-violet-neon::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 98px,
+      rgba(0, 255, 255, 0.02) 100px,
+      rgba(0, 255, 255, 0.02) 102px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 98px,
+      rgba(138, 43, 226, 0.015) 100px,
+      rgba(138, 43, 226, 0.015) 102px
+    );
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+/* Removed moving animations for static background */
+
+/* Digital energy particles */
+.theme-violet-neon .ember-particle-1,
+.theme-violet-neon .ember-particle-2,
+.theme-violet-neon .ember-particle-3 {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #00ffff 0%, #8a2be2 80%, transparent 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.theme-violet-neon .ember-particle-1 {
+  left: 15%;
+  animation: digital-energy-1 4s ease-in-out infinite;
+}
+
+.theme-violet-neon .ember-particle-2 {
+  left: 85%;
+  animation: digital-energy-2 5s ease-in-out infinite 1s;
+}
+
+.theme-violet-neon .ember-particle-3 {
+  left: 50%;
+  animation: digital-energy-3 6s ease-in-out infinite 3s;
+}
+
+/* Digital energy particle animations */
+@keyframes digital-energy-1 {
+  0% { 
+    top: 90%;
+    opacity: 0;
+    transform: translateX(0px) scale(0.5);
+    box-shadow: 0 0 5px #00ffff;
+  }
+  20% { 
+    opacity: 1;
+    transform: translateX(30px) scale(1);
+    box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+  }
+  80% { 
+    opacity: 0.8;
+    transform: translateX(-20px) scale(0.8);
+    box-shadow: 0 0 20px #8a2be2, 0 0 40px #8a2be2;
+  }
+  100% { 
+    top: 10%;
+    opacity: 0;
+    transform: translateX(10px) scale(0.2);
+    box-shadow: 0 0 5px #ff0080;
+  }
+}
+
+@keyframes digital-energy-2 {
+  0% { 
+    top: 85%;
+    opacity: 0;
+    transform: translateX(0px) scale(0.3);
+    box-shadow: 0 0 8px #8a2be2;
+  }
+  30% { 
+    opacity: 1;
+    transform: translateX(-25px) scale(1.2);
+    box-shadow: 0 0 20px #8a2be2, 0 0 35px #8a2be2;
+  }
+  70% { 
+    opacity: 0.9;
+    transform: translateX(35px) scale(0.9);
+    box-shadow: 0 0 25px #ff0080, 0 0 45px #ff0080;
+  }
+  100% { 
+    top: 15%;
+    opacity: 0;
+    transform: translateX(-15px) scale(0.1);
+    box-shadow: 0 0 3px #00ffff;
+  }
+}
+
+@keyframes digital-energy-3 {
+  0% { 
+    top: 95%;
+    opacity: 0;
+    transform: translateX(0px) scale(0.4);
+    box-shadow: 0 0 6px #ff0080;
+  }
+  25% { 
+    opacity: 1;
+    transform: translateX(40px) scale(1.1);
+    box-shadow: 0 0 18px #ff0080, 0 0 32px #ff0080;
+  }
+  75% { 
+    opacity: 0.85;
+    transform: translateX(-30px) scale(0.7);
+    box-shadow: 0 0 22px #00ffff, 0 0 38px #00ffff;
+  }
+  100% { 
+    top: 5%;
+    opacity: 0;
+    transform: translateX(20px) scale(0.15);
+    box-shadow: 0 0 4px #8a2be2;
+  }
+}
+
+/* Midnight Forest Theme */
+.theme-midnight-forest {
+  --forest-primary: #2d5a27;
+  --forest-secondary: #1a4d1a;
+  --forest-accent: #66cc66;
+  --forest-glow: #33ff33;
+  
+  background: linear-gradient(135deg, 
+    #0c1409 0%, 
+    #1a2f1a 50%, 
+    #0d1f0d 100%
+  );
+}
+
+.theme-midnight-forest::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(51, 255, 51, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(51, 255, 51, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Campfire Glow Theme */
+.theme-campfire {
+  --fire-orange: #ff6600;
+  --fire-red: #cc3300;
+  --fire-yellow: #ffcc00;
+  --ember-glow: rgba(255, 102, 0, 0.3);
+}
+
+.theme-campfire {
+  background: radial-gradient(circle at center bottom,
+    rgba(255, 102, 0, 0.1) 0%,
+    rgba(204, 51, 0, 0.05) 30%,
+    transparent 70%
+  );
+}
+
+/* Animated ember particles for campfire theme */
+.theme-campfire .ember-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--fire-orange);
+  border-radius: 50%;
+  animation: float-up 3s infinite ease-out;
+  opacity: 0;
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(100vh) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Enhanced Gaming UI Elements */
+.gaming-card {
+  position: relative;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.gaming-card:hover {
+  border-color: var(--brand-color, #8b45ff);
+  transform: translateY(-2px);
+}
+
+.gaming-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, transparent, var(--brand-color, #8b45ff), transparent);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gaming-card:hover::before {
+  opacity: 1;
+}
+
+/* Glitch effect for headers */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  color: #ff0080;
+  animation: glitch1 0.5s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+}
+
+.glitch-text::after {
+  color: #00ff41;
+  animation: glitch2 0.5s infinite;
+  clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+}
+
+@keyframes glitch1 {
+  0%, 14%, 15%, 49%, 50%, 99%, 100% { transform: translateX(0); }
+  15%, 49% { transform: translateX(-2px); }
+}
+
+@keyframes glitch2 {
+  0%, 20%, 21%, 62%, 63%, 99%, 100% { transform: translateX(0); }
+  21%, 62% { transform: translateX(2px); }
+}
+
+/* Scanlines effect */
+.scanlines::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 0, 0.03) 2px,
+    rgba(0, 255, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* Matrix-style background animation */
+@keyframes matrix-rain {
+  0% { transform: translateY(-100vh); }
+  100% { transform: translateY(100vh); }
+}
+
+.matrix-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.matrix-char {
+  position: absolute;
+  color: #00ff41;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  animation: matrix-rain 3s linear infinite;
+  opacity: 0.7;
+}
+
+/* Gaming-style buttons */
+.btn-gaming {
+  background: linear-gradient(45deg, #8b45ff, #ff1493);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gaming::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-gaming:hover::before {
+  left: 100%;
+}
+
+.btn-gaming:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(139, 69, 255, 0.5);
+}

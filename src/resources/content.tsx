@@ -60,7 +60,7 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Crafting digital worlds through code and pixels</>, 
   featured: {
     display: true,
     title: (
@@ -76,7 +76,7 @@ const home: Home = {
   },
   subline: (
     <>
-    I'm Bob, a full stack software engineer at <Text as="span" size="xl" weight="strong">TechCorp</Text>, where I build scalable <br /> web applications. After hours, I create open source projects.
+    I'm Bob, a full stack software engineer and indie game developer at <Text as="span" size="xl" weight="strong">GameTech Studios</Text>. <br /> I build immersive web experiences and craft indie games that tell stories.
 </>
   ),
 };
@@ -102,9 +102,10 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Bob is a San Francisco-based full stack software engineer with a passion for transforming complex challenges
-        into scalable, efficient software solutions. His work spans backend systems, frontend applications,
-        and the full spectrum of modern web development.
+        Bob is a San Francisco-based full stack software engineer and indie game developer with a passion for creating 
+        immersive digital experiences. By day, he architects scalable web applications; by night, he crafts pixel-perfect 
+        indie games and contributes to open-source gaming libraries. His work bridges the gap between traditional web development 
+        and interactive entertainment.
       </>
     ),
   },
@@ -113,17 +114,17 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "TechCorp",
+        company: "GameTech Studios",
         timeframe: "2022 - Present",
-        role: "Senior Full Stack Engineer",
+        role: "Senior Full Stack Engineer & Game Developer",
         achievements: [
           <>
-            Architected and built a microservices platform, resulting in a 40% increase in system
-            performance and 50% reduction in deployment time.
+            Built real-time multiplayer game infrastructure handling 50K+ concurrent players
+            using Node.js, WebSockets, and Redis for seamless gaming experiences.
           </>,
           <>
-            Led the migration from monolith to microservices architecture, enabling the team to
-            deploy features 60% faster.
+            Developed indie puzzle game 'Neon Maze' with Unity and C#, achieving 100K+ downloads
+            and 4.8-star rating on Steam.
           </>,
         ],
         images: [
@@ -137,17 +138,17 @@ const about: About = {
         ],
       },
       {
-        company: "DevSolutions",
+        company: "PixelForge Interactive",
         timeframe: "2018 - 2022",
-        role: "Full Stack Developer",
+        role: "Full Stack Developer & Technical Artist",
         achievements: [
           <>
-            Built a scalable API infrastructure that handles 10M+ requests per day, improving
-            system reliability by 99.9%.
+            Created modding tools and APIs for indie game community, enabling 500+ user-generated
+            content creators and extending game lifespan by 200%.
           </>,
           <>
-            Developed a real-time analytics dashboard using React and Node.js, contributing to a 25% increase
-            in data-driven decision making.
+            Built cross-platform leaderboard system with React Native and Firebase, supporting
+            real-time rankings across web, mobile, and desktop games.
           </>,
         ],
         images: [],
@@ -227,6 +228,34 @@ const about: About = {
           {
             src: "/images/projects/project-01/cover-04.jpg",
             alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        title: "Game Development",
+        description: (
+          <>Creating immersive gaming experiences with Unity, WebGL, and real-time multiplayer systems.</>
+        ),
+        tags: [
+          {
+            name: "Unity",
+            icon: "unity",
+          },
+          {
+            name: "C#",
+            icon: "csharp",
+          },
+          {
+            name: "WebGL",
+            icon: "webgl",
+          },
+        ],
+        images: [
+          {
+            src: "/images/projects/project-01/cover-02.jpg",
+            alt: "Game Project",
             width: 16,
             height: 9,
           },

@@ -71,19 +71,49 @@ const fonts: FontsConfig = {
   code: code,
 };
 
-// default customization applied to the HTML in the main layout.tsx
+// Gaming-themed dark portfolio configuration
+// Theme Option 1: Violet Neon Gaming (Current Active)
 const style: StyleConfig = {
-  theme: "system", // dark | light | system
-  neutral: "gray", // sand | gray | slate | custom
-  brand: "cyan", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
-  accent: "red", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
-  solid: "contrast", // color | contrast
-  solidStyle: "flat", // flat | plastic
-  border: "playful", // rounded | playful | conservative
-  surface: "translucent", // filled | translucent
-  transition: "all", // all | micro | macro
-  scaling: "100", // 90 | 95 | 100 | 105 | 110
+  theme: "dark", // Force dark mode for gaming aesthetic
+  neutral: "slate", // Darker neutral base
+  brand: "violet", // Neon violet primary
+  accent: "magenta", // Bright magenta accents
+  solid: "color", // Rich color fills
+  solidStyle: "plastic", // Glossy gaming UI feel
+  border: "playful", // Rounded gaming style borders
+  surface: "translucent", // Glass-like surfaces
+  transition: "all", // Smooth gaming animations
+  scaling: "105", // Slightly larger for visibility
 };
+
+// Alternative Gaming Themes (uncomment to switch):
+// Theme Option 2: Midnight Forest
+// const style: StyleConfig = {
+//   theme: "dark",
+//   neutral: "gray",
+//   brand: "emerald",
+//   accent: "moss",
+//   solid: "contrast",
+//   solidStyle: "flat",
+//   border: "rounded",
+//   surface: "filled",
+//   transition: "macro",
+//   scaling: "100",
+// };
+
+// Theme Option 3: Campfire Glow
+// const style: StyleConfig = {
+//   theme: "dark",
+//   neutral: "sand", 
+//   brand: "orange",
+//   accent: "red",
+//   solid: "color",
+//   solidStyle: "plastic",
+//   border: "playful",
+//   surface: "translucent",
+//   transition: "all",
+//   scaling: "100",
+// };
 
 const dataStyle: DataStyleConfig = {
   variant: "gradient", // flat | gradient | outline
@@ -99,44 +129,45 @@ const dataStyle: DataStyleConfig = {
   },
 };
 
+// Gaming atmospheric effects configuration
 const effects: EffectsConfig = {
   mask: {
-    cursor: false,
+    cursor: true, // Interactive cursor glow
     x: 50,
     y: 0,
-    radius: 100,
+    radius: 120, // Larger glow radius
   },
   gradient: {
-    display: false,
-    opacity: 100,
-    x: 50,
-    y: 60,
-    width: 100,
-    height: 50,
-    tilt: 0,
-    colorStart: "accent-background-strong",
-    colorEnd: "page-background",
+    display: true, // Enable atmospheric gradient
+    opacity: 80, // Subtle but visible
+    x: 30,
+    y: 20,
+    width: 120,
+    height: 80,
+    tilt: 15, // Slight angle for dynamism
+    colorStart: "brand-background-strong",
+    colorEnd: "accent-background-weak",
   },
   dots: {
-    display: true,
-    opacity: 40,
-    size: "2",
-    color: "brand-background-strong",
+    display: true, // Gaming particle effect
+    opacity: 60, // More visible particles
+    size: "3", // Slightly larger particles
+    color: "brand-background-medium",
   },
   grid: {
-    display: false,
-    opacity: 100,
-    color: "neutral-alpha-medium",
-    width: "0.25rem",
-    height: "0.25rem",
+    display: false, // Keep clean for now
+    opacity: 30,
+    color: "brand-alpha-weak",
+    width: "0.5rem",
+    height: "0.5rem",
   },
   lines: {
-    display: false,
-    opacity: 100,
-    color: "neutral-alpha-weak",
-    size: "16",
+    display: true, // Subtle tech lines
+    opacity: 20,
+    color: "accent-alpha-weak",
+    size: "32",
     thickness: 1,
-    angle: 45,
+    angle: 30, // Gaming-style diagonal
   },
 };
 
