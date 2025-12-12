@@ -1,16 +1,16 @@
-# Magic Portfolio
+# Bob Smith Portfolio
 
-Magic Portfolio is a simple, clean, beginner-friendly portfolio template. It supports an MDX-based content system for projects and blog posts, an about / CV page and a gallery.
+Bob Smith Portfolio is a simple, clean, professional portfolio template. It supports an MDX-based content system for projects and blog posts, an about / CV page and a gallery.
 
-View the demo [here](https://demo.magic-portfolio.com).
+View the live site at [localhost:3000](http://localhost:3000).
 
-![Magic Portfolio](public/images/og/home.jpg)
+![Bob Smith Portfolio](public/images/og/home.jpg)
 
 ## Getting started
 
 **1. Clone the repository**
 ```
-git clone https://github.com/once-ui-system/magic-portfolio.git
+git clone https://github.com/bobsmith/portfolio.git
 ```
 
 **2. Install dependencies**
@@ -38,11 +38,11 @@ src/resources/content.js
 Add a new .mdx file to src/app/blog/posts or src/app/work/projects
 ```
 
-Magic Portfolio was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+.
+Bob Smith Portfolio was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+.
 
 ## Documentation
 
-Docs available at: [docs.once-ui.com](https://docs.once-ui.com/docs/magic-portfolio/quick-start)
+Docs available at: [docs.once-ui.com](https://docs.once-ui.com)
 
 ## Features
 
@@ -65,7 +65,7 @@ Docs available at: [docs.once-ui.com](https://docs.once-ui.com/docs/magic-portfo
 - Set up password protection for URLs
 
 ### Localization
-- A localized, earlier version of Magic Portfolio is available with the next-intl library
+- Localization support is available with the next-intl library
 - To use localization, switch to the 'i18n' branch
 
 ## Creators

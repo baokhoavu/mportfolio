@@ -2,14 +2,14 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Bob",
+  lastName: "Smith",
+  name: `Bob Smith`,
+  role: "Full Stack Software Engineer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "bob.smith@example.com",
+  location: "America/Los_Angeles", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
@@ -25,25 +25,25 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/bobsmith",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/bobsmith",
     essential: true,
   },
   {
     name: "Instagram",
     icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
+    link: "https://www.instagram.com/bobsmith_dev",
     essential: false,
   },
   {
     name: "Threads",
     icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://www.threads.com/@bobsmith_dev",
     essential: true,
   },
   {
@@ -76,7 +76,7 @@ const home: Home = {
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
+    I'm Bob, a full stack software engineer at <Text as="span" size="xl" weight="strong">TechCorp</Text>, where I build scalable <br /> web applications. After hours, I create open source projects.
 </>
   ),
 };
@@ -102,9 +102,9 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Bob is a San Francisco-based full stack software engineer with a passion for transforming complex challenges
+        into scalable, efficient software solutions. His work spans backend systems, frontend applications,
+        and the full spectrum of modern web development.
       </>
     ),
   },
@@ -113,17 +113,17 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
+        company: "TechCorp",
         timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        role: "Senior Full Stack Engineer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Architected and built a microservices platform, resulting in a 40% increase in system
+            performance and 50% reduction in deployment time.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Led the migration from monolith to microservices architecture, enabling the team to
+            deploy features 60% faster.
           </>,
         ],
         images: [
@@ -137,17 +137,17 @@ const about: About = {
         ],
       },
       {
-        company: "Creativ3",
+        company: "DevSolutions",
         timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        role: "Full Stack Developer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Built a scalable API infrastructure that handles 10M+ requests per day, improving
+            system reliability by 99.9%.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Developed a real-time analytics dashboard using React and Node.js, contributing to a 25% increase
+            in data-driven decision making.
           </>,
         ],
         images: [],
@@ -159,12 +159,12 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "University of California, Berkeley",
+        description: <>Bachelor's in Computer Science with focus on Software Engineering.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Stanford Continuing Studies",
+        description: <>Advanced coursework in Machine Learning and Distributed Systems.</>,
       },
     ],
   },
@@ -173,14 +173,18 @@ const about: About = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "Frontend Development",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Building responsive, performant web applications using React, TypeScript, and modern CSS.</>
         ),
         tags: [
           {
-            name: "Figma",
-            icon: "figma",
+            name: "React",
+            icon: "react",
+          },
+          {
+            name: "TypeScript",
+            icon: "typescript",
           },
         ],
         // optional: leave the array empty if you don't want to display images
@@ -200,22 +204,22 @@ const about: About = {
         ],
       },
       {
-        title: "Next.js",
+        title: "Backend Development",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>Architecting scalable backend systems with Node.js, Python, and cloud infrastructure.</>
         ),
         tags: [
           {
-            name: "JavaScript",
-            icon: "javascript",
+            name: "Node.js",
+            icon: "nodejs",
           },
           {
-            name: "Next.js",
-            icon: "nextjs",
+            name: "Python",
+            icon: "python",
           },
           {
-            name: "Supabase",
-            icon: "supabase",
+            name: "PostgreSQL",
+            icon: "postgresql",
           },
         ],
         // optional: leave the array empty if you don't want to display images
@@ -235,7 +239,7 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
+  title: "Writing about software engineering and tech...",
   description: `Read what ${person.name} has been up to recently`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
