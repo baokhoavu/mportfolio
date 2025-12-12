@@ -8,7 +8,8 @@
     "biome-write": "npx @biomejs/biome format --write .",
     "start": "next start",
     "lint": "next lint",
-    "create-pr": "node scripts/create-pr.js"
+    "create-pr": "node scripts/create-pr.js",
+    "push-and-pr": "powershell scripts/push-and-pr.ps1"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
