@@ -1,0 +1,24 @@
+{
+  "name": "health-dashboard",
+  "version": "1.0.0",
+  "description": "Real-time health monitor dashboard",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start -p 3001",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "next": "^16.0.10"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@types/node": "^20.10.0",
+    "sass": "^1.69.5"
+  }
+}

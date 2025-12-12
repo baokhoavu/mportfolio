@@ -1,0 +1,69 @@
+
+@import "./variables";
+
+.dashboard {
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, $color-darker 0%, #1a1a2e 100%);
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid $color-magenta;
+
+    h1 {
+      font-size: 2rem;
+      color: $color-verdant;
+      text-shadow: 0 0 10px rgba(0, 255, 170, 0.5);
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: $color-lime;
+
+      .indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+
+        &.connected {
+          background-color: $color-lime;
+          box-shadow: 0 0 10px $color-lime;
+        }
+
+        &.disconnected {
+          background-color: $color-magenta;
+          box-shadow: 0 0 10px $color-magenta;
+        }
+      }
+    }
+  }
+
+  .container {
+    max-width: 1400px;
+  }
+
+  .loading {
+    text-align: center;
+    padding: 3rem;
+    color: $color-magenta;
+    font-size: 1.2rem;
+    animation: pulse 1.5s infinite;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
