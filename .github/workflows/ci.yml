@@ -1,0 +1,35 @@
+name: CI with Random Integer
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    env:
+      # Pull static or RNG values from .env if needed
+      STATIC_GUIDELINE: ${{ secrets.STATIC_GUIDELINE }}
+      RNG_BASE: ${{ secrets.RNG_BASE }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - name: Generate random integer (Node.js)
+        id: rng
+        run: |
+          RNG_BASE=${{ env.RNG_BASE || 1 }}
+          RNG_MAX=20
+          RANDOM_INT=$(node -e "console.log(Math.floor(Math.random()*$RNG_MAX)+parseInt('$RNG_BASE'))")
+          echo "RANDOM_INT=$RANDOM_INT" >> $GITHUB_ENV
+      - name: Use random integer
+        run: echo "Random value for this run: $RANDOM_INT"
+      - name: Use static guideline
+        run: echo "Static guideline from .env/.secrets: $STATIC_GUIDELINE"

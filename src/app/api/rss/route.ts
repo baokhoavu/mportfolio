@@ -1,5 +1,5 @@
 import { getPosts } from "@/utils/utils";
-import { baseURL, blog, person } from "@/resources";
+import { baseURL, person } from "@/resources";
 import { NextResponse } from "next/server";
 
 export async function GET() {
