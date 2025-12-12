@@ -28,6 +28,9 @@ yarn-error.log*
 # local env files
 .env*.local
 
+DASHBOARD_GUIDE.md
+branch-protection.json
+
 # vercel
 .vercel
 
