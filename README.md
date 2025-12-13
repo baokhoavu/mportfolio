@@ -40,6 +40,29 @@ Add a new .mdx file to src/app/blog/posts or src/app/work/projects
 
 Magic Portfolio was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+.
 
+## Development Workflow
+
+### Pushing and Creating PRs
+
+To push a branch and optionally create a PR with auto-merge after 1 hour:
+
+```
+npm run push-and-pr your-branch-name
+```
+
+This will:
+1. Push the branch to origin.
+2. Prompt you to confirm if you want to create a PR.
+3. If yes, create the PR and schedule it to merge automatically after 1 hour.
+
+For manual PR creation:
+
+```
+npm run create-pr your-branch-name
+```
+
+This creates the PR and schedules auto-merge after 1 hour without prompting.
+
 ## Documentation
 
 Docs available at: [docs.once-ui.com](https://docs.once-ui.com/docs/magic-portfolio/quick-start)
