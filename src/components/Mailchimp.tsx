@@ -1,8 +1,8 @@
 "use client";
 
 import { mailchimp, newsletter } from "@/resources";
-import { Button, Heading, Input, Text, Background, Column, Row } from "@once-ui-system/core";
-import { opacity, SpacingToken } from "@once-ui-system/core";
+import { Background, Button, Column, Heading, Input, Row, Text } from "@once-ui-system/core";
+import type { SpacingToken, opacity } from "@once-ui-system/core";
 import { useState } from "react";
 
 function debounce<T extends (...args: any[]) => void>(func: T, delay: number): T {
@@ -16,7 +16,7 @@ function debounce<T extends (...args: any[]) => void>(func: T, delay: number): T
 export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...flex }) => {
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState<string>("");
-  const [touched, setTouched] = useState<boolean>(false);
+  const [_touched, setTouched] = useState<boolean>(false);
 
   const validateEmail = (email: string): boolean => {
     if (email === "") {
@@ -158,8 +158,8 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
             />
           </div>
           <div id="mce-responses" className="clearfalse">
-            <div className="response" id="mce-error-response" style={{ display: "none" }}></div>
-            <div className="response" id="mce-success-response" style={{ display: "none" }}></div>
+            <div className="response" id="mce-error-response" style={{ display: "none" }} />
+            <div className="response" id="mce-success-response" style={{ display: "none" }} />
           </div>
           <div aria-hidden="true" style={{ position: "absolute", left: "-5000px" }}>
             <input

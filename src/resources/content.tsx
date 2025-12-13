@@ -1,10 +1,10 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import type { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
   firstName: "Baokhoa",
   lastName: "Vu",
-  name: `Baokhoa Vu`,
+  name: "Baokhoa Vu",
   role: "Full Stack Developer",
   avatar: "/images/avatar.jpg",
   email: process.env.NEXT_PUBLIC_EMAIL || "",
@@ -76,8 +76,10 @@ const home: Home = {
   },
   subline: (
     <>
-    I'm Baokhoa, a full stack developer with over 7 years of experience in freelancing and working for a non-profit digital marketing agency. I specialize in developing and integrating cloud-based management software solutions.
-</>
+      I'm Baokhoa, a full stack developer with over 7 years of experience in freelancing and working
+      for a non-profit digital marketing agency. I specialize in developing and integrating
+      cloud-based management software solutions.
+    </>
   ),
 };
 
@@ -102,7 +104,12 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Baokhoa is a full stack developer with over 7 years of experience ranging from freelancing to working for a non-profit digital marketing agency. He has developed and integrated many different cloud-based management software using unique out-of-the-box solutions tailored to each client. These developments include building reusable integration scripts, interactive dashboards, mobile responsive email development, and detailed reports utilizing custom queries.
+        Baokhoa is a full stack developer with over 7 years of experience ranging from freelancing
+        to working for a non-profit digital marketing agency. He has developed and integrated many
+        different cloud-based management software using unique out-of-the-box solutions tailored to
+        each client. These developments include building reusable integration scripts, interactive
+        dashboards, mobile responsive email development, and detailed reports utilizing custom
+        queries.
       </>
     ),
   },
@@ -115,15 +122,9 @@ const about: About = {
         timeframe: "2017 - Present",
         role: "Full Stack Developer",
         achievements: [
-          <>
-            Developed and integrated cloud-based management software solutions, utilizing unique out-of-the-box approaches tailored to client needs.
-          </>,
-          <>
-            Built reusable integration scripts, interactive dashboards, and mobile responsive email systems.
-          </>,
-          <>
-            Created detailed reports with custom queries to enhance data analysis and decision-making.
-          </>,
+          "Developed and integrated cloud-based management software solutions, utilizing unique out-of-the-box approaches tailored to client needs.",
+          "Built reusable integration scripts, interactive dashboards, and mobile responsive email systems.",
+          "Created detailed reports with custom queries to enhance data analysis and decision-making.",
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
@@ -140,12 +141,8 @@ const about: About = {
         timeframe: "2017 - Present",
         role: "Full Stack Developer",
         achievements: [
-          <>
-            Delivered custom cloud-based solutions for various clients, focusing on scalable and efficient software integrations.
-          </>,
-          <>
-            Developed interactive web applications and automated systems to streamline business processes.
-          </>,
+          "Delivered custom cloud-based solutions for various clients, focusing on scalable and efficient software integrations.",
+          "Developed interactive web applications and automated systems to streamline business processes.",
         ],
         images: [],
       },
@@ -161,7 +158,9 @@ const about: About = {
       },
       {
         name: "Online Courses",
-        description: <>Completed various certifications in software development and digital marketing.</>,
+        description: (
+          <>Completed various certifications in software development and digital marketing.</>
+        ),
       },
     ],
   },
