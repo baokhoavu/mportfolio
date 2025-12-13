@@ -9,6 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
+    "check-env": "node scripts/check-env.js",
+    "check-git-history": "node scripts/check-git-history.js",
     "create-pr": "node scripts/create-pr.js",
     "push-and-pr": "powershell scripts/push-and-pr.ps1"
   },

@@ -7,7 +7,7 @@ const person: Person = {
   name: `Baokhoa Vu`,
   role: "Full Stack Developer",
   avatar: "/images/avatar.jpg",
-  email: "baokhoavu@example.com",
+  email: process.env.NEXT_PUBLIC_EMAIL || "",
   location: "America/New_York", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["English"], // optional: Leave the array empty if you don't want to display languages
 };
@@ -25,31 +25,31 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: process.env.NEXT_PUBLIC_GITHUB_URL || "",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/in/baokhoadvu/",
+    link: process.env.NEXT_PUBLIC_LINKEDIN_URL || "",
     essential: true,
   },
   {
     name: "Instagram",
     icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
+    link: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "",
     essential: false,
   },
   {
     name: "Threads",
     icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: process.env.NEXT_PUBLIC_THREADS_URL || "",
     essential: true,
   },
   {
     name: "Email",
     icon: "email",
-    link: `mailto:${person.email}`,
+    link: process.env.NEXT_PUBLIC_EMAIL ? `mailto:${process.env.NEXT_PUBLIC_EMAIL}` : "",
     essential: true,
   },
 ];
