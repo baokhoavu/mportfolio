@@ -76,8 +76,8 @@ const home: Home = {
   },
   subline: (
     <>
-      I am Baokhoa, a full stack developer with over 7 years of experience in freelancing and working
-      for a non-profit digital marketing agency. I specialize in developing and integrating
+      I am Baokhoa, a full stack developer with over 7 years of experience in freelancing and
+      working for a non-profit digital marketing agency. I specialize in developing and integrating
       cloud-based management software solutions.
     </>
   ),
@@ -181,15 +181,20 @@ const about: About = {
           { name: "React", icon: "react" },
         ],
         images: [
-          { src: "/images/projects/project-01/cover-02.jpg", alt: "Project image", width: 16, height: 9 },
+          {
+            src: "/images/projects/project-01/cover-02.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
         ],
       },
       {
         title: "Cloud & Integrations",
         description: (
           <>
-            Practical experience integrating third-party services, building APIs and
-            deploying scalable apps to cloud platforms with observability and automation.
+            Practical experience integrating third-party services, building APIs and deploying
+            scalable apps to cloud platforms with observability and automation.
           </>
         ),
         tags: [
@@ -198,7 +203,12 @@ const about: About = {
           { name: "Vercel", icon: "vercel" },
         ],
         images: [
-          { src: "/images/projects/project-01/cover-04.jpg", alt: "Project image", width: 16, height: 9 },
+          {
+            src: "/images/projects/project-01/cover-04.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
         ],
       },
     ],
