@@ -26,6 +26,7 @@ push-and-pr.ps1
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.security-check-results.md
 
 # local env files
 .env
