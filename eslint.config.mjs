@@ -1,14 +1,19 @@
-import { dirname } from "node:path";
-import { fileURLToPath } from "node:url";
-import { FlatCompat } from "@eslint/eslintrc";
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTs from "eslint-config-next/typescript";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [...compat.extends("next/core-web-vitals")];
-
-export default eslintConfig;
+// Recommended flat config for Next.js projects using the
+// Next-provided shareable configs. This avoids using
+// FlatCompat and prevents potential circular validator
+// issues while keeping the project's lint rules intact.
+export default defineConfig([
+	...nextVitals,
+	...nextTs,
+	// Ensure builds/output are ignored similar to eslint-config-next defaults.
+	globalIgnores([
+		".next/**",
+		"out/**",
+		"build/**",
+		"next-env.d.ts",
+	]),
+]);

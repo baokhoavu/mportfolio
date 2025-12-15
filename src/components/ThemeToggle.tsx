@@ -1,22 +1,17 @@
 "use client";
 
-import { Row, ToggleButton, useTheme } from "@once-ui-system/core";
+import { ToggleButton, useTheme } from "@once-ui-system/core";
 import type React from "react";
-import { useEffect, useState } from "react";
 
 export const ThemeToggle: React.FC = () => {
   const { theme, setTheme } = useTheme();
-  const [_mounted, setMounted] = useState(false);
-  const [currentTheme, setCurrentTheme] = useState("light");
 
-  useEffect(() => {
-    setMounted(true);
-    setCurrentTheme(document.documentElement.getAttribute("data-theme") || "light");
-  }, []);
-
-  useEffect(() => {
-    setCurrentTheme(document.documentElement.getAttribute("data-theme") || "light");
-  }, [theme]);
+  // Derive the current theme at render time to avoid synchronous
+  // setState calls inside effects which the linter flags.
+  const currentTheme =
+    typeof document !== "undefined"
+      ? document.documentElement.getAttribute("data-theme") || theme || "light"
+      : theme || "light";
 
   const icon = currentTheme === "dark" ? "light" : "dark";
   const nextTheme = currentTheme === "light" ? "dark" : "light";

@@ -14,7 +14,7 @@ const person: Person = {
 
 const newsletter: Newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  title: <>Subscribe to {person.firstName}&apos;s Newsletter</>,
   description: <>My weekly newsletter about technology and development</>,
 };
 
@@ -76,7 +76,7 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Baokhoa, a full stack developer with over 7 years of experience in freelancing and working
+      I am Baokhoa, a full stack developer with over 7 years of experience in freelancing and working
       for a non-profit digital marketing agency. I specialize in developing and integrating
       cloud-based management software solutions.
     </>
