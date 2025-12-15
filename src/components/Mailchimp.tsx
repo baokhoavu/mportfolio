@@ -37,9 +37,10 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
     }
   };
 
-  const debouncedHandleChange = debounce<
-    (e: React.ChangeEvent<HTMLInputElement>) => void
-  >(handleChange, 2000);
+  const debouncedHandleChange = debounce<(e: React.ChangeEvent<HTMLInputElement>) => void>(
+    handleChange,
+    2000,
+  );
 
   const handleBlur = () => {
     if (!validateEmail(email)) {
