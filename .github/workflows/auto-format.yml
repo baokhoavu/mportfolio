@@ -1,0 +1,35 @@
+name: Auto Format PRs
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches:
+      - "chore/lint-fixes"
+
+jobs:
+  format:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install dependencies (biome)
+        run: npm ci --prefer-offline --no-audit --no-fund || true
+      - name: Run Biome format
+        run: npx @biomejs/biome format --write .
+      - name: Commit & push formatting changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "chore(format): apply Biome formatting"
+            git push
+          else
+            echo "No formatting changes"
+          fi
