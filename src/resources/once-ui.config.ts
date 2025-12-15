@@ -14,8 +14,9 @@ import { home } from "./index";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
 // Provide a safe default during builds so metadata generation doesn't construct invalid URLs
-// The metadata helpers expect a host/origin without protocol (they prefix `https://`),
-// so use a host-only default to avoid constructing malformed URLs.
+// Use a host-only default (no protocol). The metadata helper expects a
+// host without scheme and will prepend https:// as needed when resolving
+// open graph and twitter images during build/runtime.
 const baseURL: string = process.env.NEXT_PUBLIC_BASE_URL || "localhost:3000";
 
 const routes: RoutesConfig = {
