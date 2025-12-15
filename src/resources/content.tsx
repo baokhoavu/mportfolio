@@ -56,7 +56,7 @@ const social: Social = [
 
 const home: Home = {
   path: "/",
-  image: "/images/og/home.jpg",
+  image: "/images/avatar.jpg",
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
@@ -127,7 +127,6 @@ const about: About = {
           "Created detailed reports with custom queries to enhance data analysis and decision-making.",
         ],
         images: [
-          // optional: leave the array empty if you don't want to display images
           {
             src: "/images/projects/project-01/cover-01.jpg",
             alt: "Project image",
@@ -169,63 +168,37 @@ const about: About = {
     title: "Technical skills",
     skills: [
       {
-        title: "JavaScript/TypeScript",
+        title: "JavaScript & TypeScript",
         description: (
-          <>Proficient in building dynamic web applications with modern JavaScript frameworks.</>
+          <>
+            Specialist in building modern, component-driven web applications using React and
+            Next.js, with strong TypeScript practices for maintainability and developer DX.
+          </>
         ),
         tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "TypeScript",
-            icon: "typescript",
-          },
+          { name: "JavaScript", icon: "javascript" },
+          { name: "TypeScript", icon: "typescript" },
+          { name: "React", icon: "react" },
         ],
-        // optional: leave the array empty if you don't want to display images
         images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+          { src: "/images/projects/project-01/cover-02.jpg", alt: "Project image", width: 16, height: 9 },
         ],
       },
       {
-        title: "Cloud Platforms",
+        title: "Cloud & Integrations",
         description: (
-          <>Experience with various cloud-based management software and integration solutions.</>
+          <>
+            Practical experience integrating third-party services, building APIs and
+            deploying scalable apps to cloud platforms with observability and automation.
+          </>
         ),
         tags: [
-          {
-            name: "AWS",
-            icon: "aws",
-          },
-          {
-            name: "Node.js",
-            icon: "nodejs",
-          },
-          {
-            name: "React",
-            icon: "react",
-          },
+          { name: "AWS", icon: "aws" },
+          { name: "Node.js", icon: "nodejs" },
+          { name: "Vercel", icon: "vercel" },
         ],
-        // optional: leave the array empty if you don't want to display images
         images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+          { src: "/images/projects/project-01/cover-04.jpg", alt: "Project image", width: 16, height: 9 },
         ],
       },
     ],
