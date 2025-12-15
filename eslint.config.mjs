@@ -1,6 +1,6 @@
 import nextVitals from "eslint-config-next/core-web-vitals";
-import nextTs from "eslint-config-next/typescript";
 import { defineConfig, globalIgnores } from "eslint/config";
+import nextTs from "eslint-config-next/typescript";
 
 // Recommended flat config for Next.js projects using the
 // Next-provided shareable configs. This avoids using
