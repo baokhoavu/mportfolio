@@ -123,10 +123,20 @@ function createInlineCode({ children }: { children: ReactNode }) {
   return <InlineCode>{children}</InlineCode>;
 }
 
-function createCodeBlock(props: any) {
+type PreProps = {
+  children?: {
+    props?: {
+      className?: string;
+      children?: ReactNode;
+    };
+  };
+};
+
+function createCodeBlock(props: PreProps) {
   // For pre tags that contain code blocks
-  if (props.children?.props?.className) {
-    const { className, children } = props.children.props;
+  const child = props.children?.props;
+  if (child?.className && typeof child.children === "string") {
+    const { className, children } = child;
 
     // Extract language from className (format: language-xxx)
     const language = className.replace("language-", "");
@@ -149,7 +159,7 @@ function createCodeBlock(props: any) {
   }
 
   // Fallback for other pre tags or empty code blocks
-  return <pre {...props} />;
+  return <pre {...(props as unknown as Record<string, unknown>)} />;
 }
 
 function createList({ children }: { children: ReactNode }) {
@@ -172,22 +182,24 @@ function createHR() {
   );
 }
 
-const components = {
-  p: createParagraph as any,
-  h1: createHeading("h1") as any,
-  h2: createHeading("h2") as any,
-  h3: createHeading("h3") as any,
-  h4: createHeading("h4") as any,
-  h5: createHeading("h5") as any,
-  h6: createHeading("h6") as any,
-  img: createImage as any,
-  a: CustomLink as any,
-  code: createInlineCode as any,
-  pre: createCodeBlock as any,
-  ol: createList as any,
-  ul: createList as any,
-  li: createListItem as any,
-  hr: createHR as any,
+// Use `any` here because MDX components may accept differing props
+// shapes (Heading is generic). This keeps the MDX wrapper flexible.
+const components: Record<string, any> = {
+  p: createParagraph,
+  h1: createHeading("h1"),
+  h2: createHeading("h2"),
+  h3: createHeading("h3"),
+  h4: createHeading("h4"),
+  h5: createHeading("h5"),
+  h6: createHeading("h6"),
+  img: createImage,
+  a: CustomLink,
+  code: createInlineCode,
+  pre: createCodeBlock,
+  ol: createList,
+  ul: createList,
+  li: createListItem,
+  hr: createHR,
   Heading,
   Text,
   CodeBlock,
