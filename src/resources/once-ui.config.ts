@@ -13,7 +13,8 @@ import type {
 import { home } from "./index";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL: string = process.env.NEXT_PUBLIC_BASE_URL || "";
+// Provide a safe default during builds so metadata generation doesn't construct invalid URLs
+const baseURL: string = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
 const routes: RoutesConfig = {
   "/": true,
