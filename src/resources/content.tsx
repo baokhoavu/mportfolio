@@ -77,8 +77,8 @@ const home: Home = {
   subline: (
     <>
       I am Baokhoa, a full stack developer with over 7 years of experience in freelancing and
-      working for a non-profit digital marketing agency. I specialize in developing and
-      integrating cloud-based management software solutions.
+      working for a non-profit digital marketing agency. I specialize in developing and integrating
+      cloud-based management software solutions.
     </>
   ),
 };
