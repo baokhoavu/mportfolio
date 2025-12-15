@@ -5,18 +5,17 @@ import { Background, Button, Column, Heading, Input, Row, Text } from "@once-ui-
 import type { SpacingToken, opacity } from "@once-ui-system/core";
 import { useState } from "react";
 
-function debounce<T extends (...args: any[]) => void>(func: T, delay: number): T {
+function debounce<F extends (...args: any[]) => void>(func: F, delay: number) {
   let timeout: ReturnType<typeof setTimeout>;
-  return ((...args: Parameters<T>) => {
+  return (...args: Parameters<F>) => {
     clearTimeout(timeout);
-    timeout = setTimeout(() => func(...args), delay);
-  }) as T;
+    timeout = setTimeout(() => (func as (...a: Parameters<F>) => void)(...args), delay);
+  };
 }
 
 export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...flex }) => {
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState<string>("");
-  const [_touched, setTouched] = useState<boolean>(false);
 
   const validateEmail = (email: string): boolean => {
     if (email === "") {
@@ -38,10 +37,11 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
     }
   };
 
-  const debouncedHandleChange = debounce(handleChange, 2000);
+  const debouncedHandleChange = debounce<
+    (e: React.ChangeEvent<HTMLInputElement>) => void
+  >(handleChange, 2000);
 
   const handleBlur = () => {
-    setTouched(true);
     if (!validateEmail(email)) {
       setError("Please enter a valid email address.");
     }

@@ -4,8 +4,20 @@ import { person } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
 import { Avatar, Card, Column, Media, Row, Text } from "@once-ui-system/core";
 
+interface PostMetadata {
+  image?: string;
+  title: string;
+  publishedAt: string;
+  tag?: string;
+}
+
+interface Post {
+  slug: string;
+  metadata: PostMetadata;
+}
+
 interface PostProps {
-  post: any;
+  post: Post;
   thumbnail: boolean;
   direction?: "row" | "column";
 }
