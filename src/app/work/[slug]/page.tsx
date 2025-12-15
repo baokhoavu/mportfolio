@@ -6,7 +6,6 @@ import { getPosts } from "@/utils/utils";
 import {
   AvatarGroup,
   Column,
-  
   Heading,
   Line,
   Media,
