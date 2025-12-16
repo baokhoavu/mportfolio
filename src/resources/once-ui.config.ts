@@ -13,7 +13,11 @@ import type {
 import { home } from "./index";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL: string = process.env.NEXT_PUBLIC_BASE_URL || "";
+// Provide a safe default during builds so metadata generation doesn't construct invalid URLs
+// Use a host-only default (no protocol). The metadata helper expects a
+// host without scheme and will prepend https:// as needed when resolving
+// open graph and twitter images during build/runtime.
+const baseURL: string = process.env.NEXT_PUBLIC_BASE_URL || "localhost:3001";
 
 const routes: RoutesConfig = {
   "/": true,
