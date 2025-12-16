@@ -7,7 +7,7 @@
     "build": "next build",
     "biome-write": "npx @biomejs/biome format --write .",
     "start": "next start",
-    "lint": "eslint src",
+    "lint": "biome check .",
     "type-check": "tsc --noEmit",
     "check-env": "node scripts/check-env.js",
     "check-git-history": "node scripts/check-git-history.js",

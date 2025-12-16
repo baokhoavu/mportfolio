@@ -1,14 +1,17 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import dynamic from "next/dynamic";
 
 import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
 
 import { about, blog, display, gallery, person, routes, work } from "@/resources";
 import styles from "./Header.module.scss";
-const ThemeToggle = dynamic(() => import("./ThemeToggle").then(mod => ({ default: mod.ThemeToggle })), { ssr: false });
+const ThemeToggle = dynamic(
+  () => import("./ThemeToggle").then((mod) => ({ default: mod.ThemeToggle })),
+  { ssr: false },
+);
 
 type TimeDisplayProps = {
   timeZone: string;

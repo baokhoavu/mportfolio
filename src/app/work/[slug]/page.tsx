@@ -73,7 +73,7 @@ export default async function Project({
     })) || [];
 
   return (
-    <Column as="section" maxWidth="m" horizontal="center" gap="l">
+    <Column as="section" maxWidth="l" horizontal="center" gap="l">
       <Schema
         as="blogPosting"
         baseURL={baseURL}

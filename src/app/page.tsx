@@ -1,4 +1,3 @@
-import { Mailchimp } from "@/components";
 import { Posts } from "@/components/blog/Posts";
 import { Projects } from "@/components/work/Projects";
 import { about, baseURL, home, person, routes } from "@/resources";
@@ -124,7 +123,6 @@ export default function Home() {
         </Column>
       )}
       <Projects range={[2]} />
-      <Mailchimp />
     </Column>
   );
 }
