@@ -184,6 +184,7 @@ function createHR() {
 
 // Use `any` here because MDX components may accept differing props
 // shapes (Heading is generic). This keeps the MDX wrapper flexible.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const components: Record<string, any> = {
   p: createParagraph,
   h1: createHeading("h1"),

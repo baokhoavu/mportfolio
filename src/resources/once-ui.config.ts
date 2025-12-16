@@ -17,7 +17,7 @@ import { home } from "./index";
 // Use a host-only default (no protocol). The metadata helper expects a
 // host without scheme and will prepend https:// as needed when resolving
 // open graph and twitter images during build/runtime.
-const baseURL: string = process.env.NEXT_PUBLIC_BASE_URL || "localhost:3000";
+const baseURL: string = process.env.NEXT_PUBLIC_BASE_URL || "localhost:3001";
 
 const routes: RoutesConfig = {
   "/": true,

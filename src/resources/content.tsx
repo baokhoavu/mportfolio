@@ -1,5 +1,5 @@
 import type { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
-import { Line, Row, Text } from "@once-ui-system/core";
+import { Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
   firstName: "Baokhoa",
@@ -51,16 +51,14 @@ const home: Home = {
     title: (
       <Row gap="12" vertical="center">
         <Text marginRight="4" onBackground="brand-medium">
-          Full-stack developer with 7+ years of experience in engineering, freelancing, and non-profit digital marketing. 
+          Full-stack developer with 7+ years of experience in engineering, freelancing, and
+          non-profit digital marketing.
         </Text>
       </Row>
     ),
     href: "/work/building-once-ui-a-customizable-design-system",
   },
-  subline: (
-    <>
-    </>
-  ),
+  subline: <></>,
 };
 
 const about: About = {
@@ -75,7 +73,7 @@ const about: About = {
   avatar: {
     display: true,
   },
-    calendar: {
+  calendar: {
     display: false,
     link: "https://cal.com",
   },
@@ -84,12 +82,14 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Full-stack developer with 7+ years of experience spanning startups, freelancing, and non-profit digital marketing.
-        Architected and integrated cloud-based management platforms using tailored, scalable solutions.
-        Delivered reusable integrations, interactive dashboards, mobile-responsive email systems, and data-driven reports via custom queries.
-        Migrated, enhanced, and maintained React/Redux Optimizely B2B commerce storefronts.
-        Built and supported robust .NET C# backends utilizing LINQ and SQL.
-        Partnered with technical leads, PMs, and POs to mentor teams, automate deployments, conduct code reviews, and establish API testing best practices (Swagger, Postman, ADO).
+        Full-stack developer with 7+ years of experience spanning startups, freelancing, and
+        non-profit digital marketing. Architected and integrated cloud-based management platforms
+        using tailored, scalable solutions. Delivered reusable integrations, interactive dashboards,
+        mobile-responsive email systems, and data-driven reports via custom queries. Migrated,
+        enhanced, and maintained React/Redux Optimizely B2B commerce storefronts. Built and
+        supported robust .NET C# backends utilizing LINQ and SQL. Partnered with technical leads,
+        PMs, and POs to mentor teams, automate deployments, conduct code reviews, and establish API
+        testing best practices (Swagger, Postman, ADO).
       </>
     ),
   },
@@ -106,7 +106,7 @@ const about: About = {
           "Architected and deployed cloud-based management platforms with innovative integrations, including reusable scripts, interactive dashboards, mobile-responsive email systems, and advanced reporting with custom queries.",
           "Engineered high-performance .NET C# backend solutions with robust exception validation, endpoint enrichment, and ERP custom integrations, optimizing customer flows and checkout processes that supported $5B+ in annual transactions.",
           "Provided technical leadership across cross-functional teams (development, product, design, DevOps, QA, mobile) through strategic guidance and collaborative problem-solving.",
-          "Mentored junior and contract developers in best practices for code quality, debugging, workflows, environment management, and cross-functional collaboration."
+          "Mentored junior and contract developers in best practices for code quality, debugging, workflows, environment management, and cross-functional collaboration.",
         ],
         images: [
           {
@@ -145,7 +145,7 @@ const about: About = {
           "Implemented MarTech and analytics solutions using Segment and Braze for event tracking, attribution, reporting, alerts, and messaging insights.",
           "Deployed scalable backend analytics on GCP with Docker, including custom Segment integrations with the Twitter Ads API.",
           "Delivered cross-channel analytics for web, iOS, Android, and WordPress, enabling consistent session and event tracking.",
-          "Mentored junior developers and partnered cross-functionally to translate marketing goals into data-driven solutions."
+          "Mentored junior developers and partnered cross-functionally to translate marketing goals into data-driven solutions.",
         ],
         images: [
           {
@@ -166,7 +166,7 @@ const about: About = {
           "Built full-stack Angular applications integrating Blackbaud APIs for event check-in, secure donations, user profiles, waivers, and live fundraising dashboards.",
           "Architected data pipelines using Node, Express, MongoDB, and scheduled jobs to persist and refresh real-time fundraising analytics.",
           "Developed reusable JavaScript plugins for campaign security, SSO user verification, and API access.",
-          "Implemented marketing and analytics tracking with Google Analytics, Tag Manager, Facebook Pixel, and heatmap tools, while maintaining hosting, servers, and internal documentation."
+          "Implemented marketing and analytics tracking with Google Analytics, Tag Manager, Facebook Pixel, and heatmap tools, while maintaining hosting, servers, and internal documentation.",
         ],
         images: [
           {
@@ -209,39 +209,24 @@ const about: About = {
     institutions: [
       {
         name: "Analytics Expert",
-        description: <>
-          Twilio Segment
-          Issued Aug 2021 - Expired Aug 2024
-        </>,
+        description: <>Twilio Segment Issued Aug 2021 - Expired Aug 2024</>,
       },
       {
         name: "Implementation Expert",
-        description: <>
-          Twilio Segment
-          Issued Aug 2021 - Expired Aug 2024
-        </>,
+        description: <>Twilio Segment Issued Aug 2021 - Expired Aug 2024</>,
       },
       {
         name: "App Development",
-        description: <>
-          Shopify
-          Issued July 2021 - Expired July 2022
-        </>,
+        description: <>Shopify Issued July 2021 - Expired July 2022</>,
       },
       {
         name: "Product Fundamentals",
-        description: <>
-          Shopify
-          Issued July 2021 - Expired July 2022
-        </>,
+        description: <>Shopify Issued July 2021 - Expired July 2022</>,
       },
       {
         name: "Theme Development",
-        description: <>
-          Shopify
-          Issued July 2021 - Expired July 2022
-        </>,
-      }
+        description: <>Shopify Issued July 2021 - Expired July 2022</>,
+      },
     ],
   },
   technical: {
@@ -252,17 +237,24 @@ const about: About = {
         title: "",
         description: (
           <>
-            Comprehensive full-stack development expertise with 7+ years of experience in building scalable web applications, cloud solutions, and cross-platform integrations.
-            <br /><br />
-            <strong>Languages & Tools:</strong> C#, JavaScript (ES6+), TypeScript, SQL, Python, HTML5, CSS3/SCSS, Git, VS Code, Postman
+            Comprehensive full-stack development expertise with 7+ years of experience in building
+            scalable web applications, cloud solutions, and cross-platform integrations.
             <br />
-            <strong>Frontend Development:</strong> React, Redux, Next.js, Angular, Vue, Tailwind CSS, Bootstrap, jQuery
             <br />
-            <strong>Backend Development:</strong> .NET, Node.js, Express, RESTful APIs, GraphQL, PostgreSQL, MySQL, MongoDB
+            <strong>Languages & Tools:</strong> C#, JavaScript (ES6+), TypeScript, SQL, Python,
+            HTML5, CSS3/SCSS, Git, VS Code, Postman
             <br />
-            <strong>Cloud & DevOps:</strong> Azure (ADO), AWS, GCP, Docker, Kubernetes, CI/CD Pipelines
+            <strong>Frontend Development:</strong> React, Redux, Next.js, Angular, Vue, Tailwind
+            CSS, Bootstrap, jQuery
             <br />
-            <strong>Platforms & Analytics:</strong> WordPress, Shopify, HubSpot, Segment, Braze, Google Tag Manager, Azure Application Insights
+            <strong>Backend Development:</strong> .NET, Node.js, Express, RESTful APIs, GraphQL,
+            PostgreSQL, MySQL, MongoDB
+            <br />
+            <strong>Cloud & DevOps:</strong> Azure (ADO), AWS, GCP, Docker, Kubernetes, CI/CD
+            Pipelines
+            <br />
+            <strong>Platforms & Analytics:</strong> WordPress, Shopify, HubSpot, Segment, Braze,
+            Google Tag Manager, Azure Application Insights
           </>
         ),
         tags: [],

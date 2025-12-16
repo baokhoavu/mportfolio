@@ -5,11 +5,11 @@ import { Background, Button, Column, Heading, Input, Row, Text } from "@once-ui-
 import type { SpacingToken, opacity } from "@once-ui-system/core";
 import { useState } from "react";
 
-function debounce<F extends (...args: any[]) => void>(func: F, delay: number) {
+function debounce<T extends unknown[]>(func: (...args: T) => void, delay: number) {
   let timeout: ReturnType<typeof setTimeout>;
-  return (...args: Parameters<F>) => {
+  return (...args: T) => {
     clearTimeout(timeout);
-    timeout = setTimeout(() => (func as (...a: Parameters<F>) => void)(...args), delay);
+    timeout = setTimeout(() => func(...args), delay);
   };
 }
 
@@ -37,10 +37,7 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
     }
   };
 
-  const debouncedHandleChange = debounce<(e: React.ChangeEvent<HTMLInputElement>) => void>(
-    handleChange,
-    2000,
-  );
+  const debouncedHandleChange = debounce(handleChange, 2000);
 
   const handleBlur = () => {
     if (!validateEmail(email)) {
