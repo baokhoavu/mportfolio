@@ -1,16 +1,16 @@
-# Magic Portfolio
+# Baokhoa Vu - Full Stack Developer Portfolio
 
-Magic Portfolio is a simple, clean, beginner-friendly portfolio template. It supports an MDX-based content system for projects and blog posts, an about / CV page and a gallery.
+This is the personal portfolio website of Baokhoa Vu, a seasoned full-stack developer with 7 years of experience spanning startups, digital marketing agencies, wholesale distribution, and fundraising sectors. Built with modern web technologies, this portfolio showcases projects, skills, and professional journey.
 
-View the demo [here](https://demo.magic-portfolio.com).
+View the live portfolio [here](https://baokhoavu-portfolio.vercel.app).
 
-![Magic Portfolio](public/images/og/home.jpg)
+![Baokhoa Vu Portfolio](public/images/og/home.jpg)
 
 ## Getting started
 
 **1. Clone the repository**
 ```
-git clone https://github.com/once-ui-system/magic-portfolio.git
+git clone https://github.com/baokhoavu/portfolio.git
 ```
 
 **2. Install dependencies**
@@ -38,39 +38,28 @@ src/resources/content.js
 Add a new .mdx file to src/app/blog/posts or src/app/work/projects
 ```
 
-Magic Portfolio was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+.
+This portfolio was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+.
 
-## Development Workflow
+## Development
 
-### Pushing and Creating PRs
-
-To push a branch and optionally create a PR with auto-merge after 1 hour:
-
+To run the development server:
 ```
-npm run push-and-pr your-branch-name
+npm run dev
 ```
 
-This will:
-1. Push the branch to origin.
-2. Prompt you to confirm if you want to create a PR.
-3. If yes, create the PR and schedule it to merge automatically after 1 hour.
-
-For manual PR creation:
-
+To build for production:
 ```
-npm run create-pr your-branch-name
+npm run build
 ```
 
-This creates the PR and schedules auto-merge after 1 hour without prompting.
+## About the Developer
 
-## Documentation
-
-Docs available at: [docs.once-ui.com](https://docs.once-ui.com/docs/magic-portfolio/quick-start)
+Baokhoa Vu is a full-stack developer with 7 years of experience working across diverse industries including startups, digital marketing agencies, wholesale distribution, and fundraising. This portfolio showcases technical expertise in modern web development, project management, and innovative solutions.
 
 ## Features
 
 ### Once UI
-- All tokens, components & features of [Once UI](https://once-ui.com)
+- All tokens, components & features of [Once UI](https://once-ui.com) customized for personal branding
 
 ### SEO
 - Automatic open-graph and X image generation with next/og
@@ -82,23 +71,23 @@ Docs available at: [docs.once-ui.com](https://docs.once-ui.com/docs/magic-portfo
 - Endless customization options through [data attributes](https://once-ui.com/docs/theming)
 
 ### Content
-- Render sections conditionally based on the content file
-- Enable or disable pages for blog, work, gallery and about / CV
-- Generate and display social links automatically
-- Set up password protection for URLs
+- Showcase of professional projects and technical achievements
+- Blog posts on development insights and industry trends
+- About page highlighting 7 years of experience across multiple sectors
+- Gallery of work samples and case studies
 
 ### Localization
-- A localized, earlier version of Magic Portfolio is available with the next-intl library
-- To use localization, switch to the 'i18n' branch
+- Supports multiple languages for international reach
 
-## Creators
+## Creator
 
-Lorant One: [Threads](https://www.threads.net/@lorant.one) / [LinkedIn](https://www.linkedin.com/in/lorant-one/)
+Baokhoa Vu: Full-Stack Developer with expertise in modern web technologies and cross-industry solutions.
 
-## Get involved
+## Connect
 
-- Join the Design Engineers Club on [Discord](https://discord.com/invite/5EyAQ4eNdS) and share your project with us!
-- Deployed your docs? Share it on the [Once UI Hub](https://once-ui.com/hub) too! We feature our favorite apps on our landing page.
+- [LinkedIn](https://www.linkedin.com/in/baokhoavu/)
+- [GitHub](https://github.com/baokhoavu)
+- [Portfolio](https://baokhoavu-portfolio.vercel.app)
 
 ## License
 
@@ -111,4 +100,4 @@ See `LICENSE.txt` for more information.
 
 ## Deploy with Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&project-name=portfolio&repository-name=portfolio&redirect-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&demo-title=Magic%20Portfolio&demo-description=Showcase%20your%20designers%20or%20developer%20portfolio&demo-url=https%3A%2F%2Fdemo.magic-portfolio.com&demo-image=%2F%2Fraw.githubusercontent.com%2Fonce-ui-system%2Fmagic-portfolio%2Fmain%2Fpublic%2Fimages%2Fog%2Fhome.jpg)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fbaokhoavu%2Fportfolio&project-name=baokhoavu-portfolio&repository-name=portfolio&redirect-url=https%3A%2F%2Fgithub.com%2Fbaokhoavu%2Fportfolio&demo-title=Baokhoa%20Vu%20Portfolio&demo-description=Full-Stack%20Developer%20Portfolio&demo-url=https%3A%2F%2Fbaokhoavu-portfolio.vercel.app&demo-image=%2F%2Fraw.githubusercontent.com%2Fbaokhoavu%2Fportfolio%2Fmain%2Fpublic%2Fimages%2Fog%2Fhome.jpg)

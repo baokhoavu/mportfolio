@@ -181,17 +181,17 @@ const mailchimp: MailchimpConfig = {
 
 // default schema data
 const schema: SchemaConfig = {
-  logo: "",
-  type: "",
-  name: "",
+  logo: "/images/avatar.jpg",
+  type: "Person",
+  name: "Baokhoa Vu",
   description: home.description,
-  email: "",
+  email: process.env.NEXT_PUBLIC_EMAIL || "",
 };
 
 // social links
 const sameAs: SameAsConfig = {
-  threads: "",
-  linkedin: "",
+  threads: process.env.NEXT_PUBLIC_THREADS_URL || "",
+  linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || "",
   discord: "",
 };
 
