@@ -10,11 +10,11 @@ export const ThemeToggle: React.FC = () => {
   // setState calls inside effects which the linter flags.
   const currentTheme =
     typeof document !== "undefined"
-      ? document.documentElement.getAttribute("data-theme") || theme || "light"
-      : theme || "light";
+      ? document.documentElement.getAttribute("data-theme") || theme || "dark"
+      : theme || "dark";
 
-  const icon = currentTheme === "dark" ? "light" : "dark";
-  const nextTheme = currentTheme === "light" ? "dark" : "light";
+  const icon = currentTheme === "light" ? "dark" : "light";
+  const nextTheme = currentTheme === "dark" ? "light" : "dark";
 
   return (
     <ToggleButton

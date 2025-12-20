@@ -16,14 +16,25 @@ import {
   ThemeProvider,
   ToastProvider,
   type TransitionStyle,
+  useTheme,
 } from "@once-ui-system/core";
+import { useEffect } from "react";
 import { dataStyle, style } from "../resources";
 import { iconLibrary } from "../resources/icons";
+
+function ForceDarkTheme() {
+  const { setTheme } = useTheme();
+  useEffect(() => {
+    setTheme('dark');
+  }, [setTheme]);
+  return null;
+}
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <LayoutProvider>
       <ThemeProvider
+        theme={style.theme as any}
         brand={style.brand as Schemes}
         accent={style.accent as Schemes}
         neutral={style.neutral as NeutralColor}
@@ -34,6 +45,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
         transition={style.transition as TransitionStyle}
         scaling={style.scaling as ScalingSize}
       >
+        <ForceDarkTheme />
         <DataThemeProvider
           variant={dataStyle.variant as ChartVariant}
           mode={dataStyle.mode as ChartMode}
