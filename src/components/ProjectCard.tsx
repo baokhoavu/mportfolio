@@ -19,6 +19,7 @@ interface ProjectCardProps {
   description: string;
   avatars: { src: string }[];
   link: string;
+  githubPage?: string;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -29,16 +30,19 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   avatars,
   link,
+  githubPage,
 }) => {
   return (
     <Column fillWidth gap="m">
-      <Carousel
-        sizes="(max-width: 960px) 100vw, 960px"
-        items={images.map((image) => ({
-          slide: image,
-          alt: title,
-        }))}
-      />
+      <div className="carousel-viewport-fix max-h-[400px] md:max-h-[600px] lg:max-h-[720px] overflow-hidden">
+        <Carousel
+          sizes="(max-width: 960px) 100vw, 960px"
+          items={images.map((image) => ({
+            slide: image,
+            alt: title,
+          }))}
+        />
+      </div>
       <Flex
         s={{ direction: "column" }}
         fillWidth
@@ -81,6 +85,18 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   <Text variant="body-default-s">View project</Text>
                 </SmartLink>
               )}
+              <SmartLink
+                style={{ margin: "0", width: "fit-content" }}
+                href={
+                  githubPage
+                    ? `${process.env.NEXT_PUBLIC_GITHUB_URL?.replace(/\/?$/, "/")}${githubPage}`
+                    : process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/"
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Text variant="body-default-s">Github</Text>
+              </SmartLink>
             </Flex>
           </Column>
         )}

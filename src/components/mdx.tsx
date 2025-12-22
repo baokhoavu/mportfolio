@@ -69,7 +69,6 @@ function createImage({ alt, src, ...props }: MediaProps & { src: string }) {
       enlarge
       radius="m"
       border="neutral-alpha-medium"
-      sizes="(max-width: 960px) 100vw, 960px"
       alt={alt}
       src={src}
       {...props}

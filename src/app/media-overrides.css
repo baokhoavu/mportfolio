@@ -1,0 +1,39 @@
+.media-max-height {
+  max-height: 600px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: block;
+}
+.media-max-height span,
+.media-max-height picture {
+  max-height: 600px !important;
+  width: 100% !important;
+  display: block !important;
+}
+.media-max-height img {
+  max-height: 600px !important;
+  width: 100% !important;
+  object-fit: cover !important;
+  height: auto !important;
+  display: block !important;
+}
+
+/* Hard override for Carousel viewport */
+.carousel-viewport-fix {
+  max-height: 600px !important;
+  overflow: hidden !important;
+  position: relative;
+}
+.carousel-viewport-fix [class*="Carousel"] {
+  max-height: 600px !important;
+  overflow: hidden !important;
+}
+.carousel-viewport-fix img,
+.carousel-viewport-fix picture,
+.carousel-viewport-fix span {
+  max-height: 600px !important;
+  width: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}

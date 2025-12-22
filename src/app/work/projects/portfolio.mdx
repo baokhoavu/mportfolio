@@ -1,37 +1,54 @@
 ---
-title: "Portfolio"
+title: "Old Portfolio"
 publishedAt: "2023-08-15"
-summary: "A portfolio site built with Gatsby and MDX, using GraphQL to source structured content and Tailwind for responsive layouts."
+summary: "A modern, secure, and performant one-page portfolio built with React, Vite, and Tailwind CSS. Features enterprise-grade security, automated CI/CD, and best-in-class development practices."
 images:
-  - "/images/projects/project-01/cover-01.jpg"
-  - "/images/projects/project-01/cover-02.jpg"
-team:
+  - "/images/projects/project-01/por-1.png"
+  - "/images/projects/project-01/por-2.png"
+  - "/images/projects/project-01/por-3.png"
   - name: "Baokhoa Vu"
     role: "Full Stack Developer"
     avatar: "/images/avatar.jpg"
-link: "https://github.com/baokhoavu/baoportfolio"
+link: "https://gbportfolio-kappa.vercel.app"
+github_page: "gbportfolio"
 technologies:
-  - Gatsby
-  - React
-  - MDX
-  - GraphQL
-  - Tailwind CSS
+  - React 18 (Hooks, Concurrent Features)
+  - Vite (Lightning-fast Build Tool)
+  - Tailwind CSS (Utility-first Styling)
+  - MDX (Content Authoring)
+  - Vitest (Unit & Integration Testing)
+  - Biome (Linting, Formatting, Analysis)
+  - GitHub Actions (CI/CD)
+  - CodeQL (Static Security Analysis)
+  - audit-ci, Gitleaks (Vulnerability & Secret Scanning)
+  - Vercel/Netlify (Automated Deployment)
 highlights:
-  - "Built a component-driven portfolio with MDX content and GraphQL sourcing."
-  - "Responsive design and reusable content components for efficient updates."
+  - "Implemented a modern, mobile-first UI with Tailwind CSS, dark mode, and smooth animations."
+  - "Integrated comprehensive security scanning: CodeQL, audit-ci, and Gitleaks for vulnerability and secret detection."
+  - "Automated CI/CD pipelines with GitHub Actions, including security gates and dependency reviews."
+  - "Optimized for SEO, accessibility (WCAG), and Core Web Vitals."
+  - "PWA enhancements: service worker, web manifest, and offline support."
+  - "Pre-commit hooks and automated code quality checks with Biome and Vitest."
+  - "Strict Content Security Policy, HSTS, and secure environment variable handling."
+  - "Performance monitoring, error tracking, and deployment automation via Vercel/Netlify."
 
 ---
 
-A portfolio built using Gatsby with MDX for copy and image integration. Data is retrieved using GraphQL for refined, component-driven queries. The project emphasizes responsive design using Tailwind and reusable content components.
 
-This iteration focuses on improved componentization, optimized image delivery, and clearer content-authoring workflows so non-developers can update pages safely.
+Gbportfolio is a one-page portfolio application architected for modern web standards, security, and developer experience. Built with React 18 and Vite, it leverages Tailwind CSS for a utility-first, responsive UI, and MDX for rich content authoring. The project is hardened with enterprise-grade security: CodeQL static analysis, daily dependency audits, secret detection, and strict runtime security headers (CSP, HSTS, X-Frame-Options). Automated CI/CD pipelines enforce code quality, run security checks, and deploy to Vercel or Netlify with zero vulnerabilities. Testing is handled by Vitest for fast, reliable feedback, and Biome ensures code quality and consistency. The site is SEO-optimized, accessible, and PWA-ready, with performance and error monitoring in place. All configuration and environment variables are centralized for secure, maintainable deployments.
+
 
 ## Key challenges
 
-- Maintaining a single source of truth for content while enabling flexible page layouts.
-- Optimizing image loading and responsive behavior across varied content blocks.
+- Enforcing security best practices across the stack, including static analysis, dependency audits, and runtime protection.
+- Achieving fast, reliable builds and deployments with Vite and automated CI/CD.
+- Ensuring accessibility, SEO, and performance compliance for enterprise-grade standards.
+- Managing content and configuration securely with MDX and environment validation.
+
 
 ## Impact
 
-- Reduced content update time by enabling authors to use MDX components.
-- Improved page load performance through targeted GraphQL queries and responsive assets.
+- Achieved zero vulnerabilities across all security scans and audits.
+- Delivered sub-second page loads and high Lighthouse scores through modern tooling and best practices.
+- Enabled rapid, secure deployments with automated pipelines and pre-deployment validation.
+- Provided a maintainable, extensible foundation for future portfolio and content growth.
