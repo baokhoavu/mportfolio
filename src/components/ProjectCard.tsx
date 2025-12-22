@@ -1,4 +1,5 @@
 "use client";
+import React, { type JSX } from "react";
 
 import {
   AvatarGroup,
@@ -9,6 +10,8 @@ import {
   SmartLink,
   Text,
 } from "@once-ui-system/core";
+import { SiNextdotjs, SiReact, SiTypescript, SiTailwindcss, SiVercel, SiGithubactions, SiContentful } from "react-icons/si";
+import { FaCode } from "react-icons/fa";
 
 interface ProjectCardProps {
   href: string;
@@ -20,6 +23,7 @@ interface ProjectCardProps {
   avatars: { src: string }[];
   link: string;
   githubPage?: string;
+  technologies?: string[];
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -31,18 +35,18 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   avatars,
   link,
   githubPage,
+  technologies = [],
 }) => {
   return (
     <Column fillWidth gap="m">
-      <div className="carousel-viewport-fix max-h-[400px] md:max-h-[600px] lg:max-h-[720px] overflow-hidden">
-        <Carousel
-          sizes="(max-width: 960px) 100vw, 960px"
-          items={images.map((image) => ({
-            slide: image,
-            alt: title,
-          }))}
-        />
-      </div>
+      <Flex style={{ height: '100%' }}>
+        <div className="carousel-viewport-fix w-full h-full max-h-none overflow-hidden" style={{ flex: 1 }}>
+          <Carousel
+            sizes="(max-width: 960px) 100vw, 960px"
+            items={Array.isArray(images) ? images.map((img) => ({ slide: img, alt: title })) : []}
+          />
+        </div>
+      </Flex>
       <Flex
         s={{ direction: "column" }}
         fillWidth
@@ -52,10 +56,19 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         gap="l"
       >
         {title && (
-          <Flex flex={5}>
+          <Flex flex={5} direction="column" align="start" gap="4">
             <Heading as="h2" wrap="balance" variant="heading-strong-xl">
               {title}
             </Heading>
+            {technologies.length > 0 && (
+              <Flex gap="8" align="center" style={{ marginTop: 4, flexWrap: 'wrap' }}>
+                {(technologies.slice(0, 6)).map((tech) => (
+                  <span key={tech} title={tech} style={{ fontSize: 16, fontWeight: 500, padding: '0 8px', whiteSpace: 'nowrap' }}>
+                    {tech}
+                  </span>
+                ))}
+              </Flex>
+            )}
           </Flex>
         )}
         {(avatars?.length > 0 || description?.trim() || content?.trim()) && (

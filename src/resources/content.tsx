@@ -34,7 +34,7 @@ const social: Social = [
   {
     name: "Email",
     icon: "email",
-    link: process.env.NEXT_PUBLIC_EMAIL ? `mailto:${process.env.NEXT_PUBLIC_EMAIL}` : "",
+    link: "mailto:baokhoadinhvu@gmail.com",
     essential: true,
   },
 ];
@@ -237,24 +237,20 @@ const about: About = {
         title: "",
         description: (
           <>
-            Comprehensive full-stack development expertise with 7+ years of experience in building
-            scalable web applications, cloud solutions, and cross-platform integrations.
+            Full-stack engineer with 7+ years of experience building scalable web apps, cloud platforms, and integrations for startups, enterprise, and non-profit. Passionate about clean code, performance, and user experience.
             <br />
             <br />
-            <strong>Languages & Tools:</strong> C#, JavaScript (ES6+), TypeScript, SQL, Python,
-            HTML5, CSS3/SCSS, Git, VS Code, Postman
+            <strong>Languages &amp; Tools:</strong> C#, JavaScript (ES6+), TypeScript, Python, SQL, HTML5, CSS3/SCSS, Git, VS Code, Postman
             <br />
-            <strong>Frontend Development:</strong> React, Redux, Next.js, Angular, Vue, Tailwind
-            CSS, Bootstrap, jQuery
+            <strong>Frontend:</strong> React, Next.js, Redux, Angular, Angular Material, Vite, Tailwind CSS, Bootstrap, jQuery, Vue
             <br />
-            <strong>Backend Development:</strong> .NET, Node.js, Express, RESTful APIs, GraphQL,
-            PostgreSQL, MySQL, MongoDB
+            <strong>Backend:</strong> .NET, Node.js, Express, REST APIs, GraphQL, MongoDB, Mongoose, PostgreSQL, MySQL
             <br />
-            <strong>Cloud & DevOps:</strong> Azure (ADO), AWS, GCP, Docker, Kubernetes, CI/CD
-            Pipelines
+            <strong>Cloud &amp; DevOps:</strong> Azure (ADO), AWS, GCP, Docker, Kubernetes, Vercel, CI/CD (GitHub Actions)
             <br />
-            <strong>Platforms & Analytics:</strong> WordPress, Shopify, HubSpot, Segment, Braze,
-            Google Tag Manager, Azure Application Insights
+            <strong>Data &amp; Visualization:</strong> Recharts, Mapbox, Tableau, Segment, Braze, Google Tag Manager, Azure Application Insights
+            <br />
+            <strong>Platforms &amp; CMS:</strong> WordPress, Shopify, HubSpot, Contentful, Blackbaud Luminate
           </>
         ),
         tags: [],

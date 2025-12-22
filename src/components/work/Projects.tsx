@@ -15,7 +15,23 @@ export function Projects({ range, exclude }: ProjectsProps) {
     allProjects = allProjects.filter((post) => !exclude.includes(post.slug));
   }
 
+  // Custom order by slug
+  const customOrder = [
+    "neadless",
+    "koi",
+    "kristeenajs",
+    "bao-covid-map",
+    "portfolio"
+  ];
   const sortedProjects = allProjects.sort((a, b) => {
+    const aIndex = customOrder.indexOf(a.slug);
+    const bIndex = customOrder.indexOf(b.slug);
+    if (aIndex !== -1 && bIndex !== -1) {
+      return aIndex - bIndex;
+    }
+    if (aIndex !== -1) return -1;
+    if (bIndex !== -1) return 1;
+    // Fallback to publishedAt descending for others
     return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
   });
 
@@ -37,6 +53,7 @@ export function Projects({ range, exclude }: ProjectsProps) {
           avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}
           link={post.metadata.link || ""}
           githubPage={post.metadata.github_page}
+          technologies={post.metadata.technologies}
         />
       ))}
     </Column>
