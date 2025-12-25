@@ -98,6 +98,41 @@ Distributed under the CC BY-NC 4.0 License.
 
 See `LICENSE.txt` for more information.
 
+## Deploy with Cache Management
+
+### Quick Deploy (with cache purge)
+```bash
+npm run deploy-clean
+```
+
+### Manual Deploy
+```bash
+npm run build
+npm run vercel-deploy
+```
+
+### Cache Prevention
+
+This project includes multiple layers of cache prevention:
+
+1. **HTTP Headers**: `Cache-Control: max-age=0, must-revalidate`
+2. **CDN Headers**: Vercel CDN cache disabled for HTML content
+3. **Build IDs**: Unique build identifiers force cache invalidation
+4. **Static Assets**: JS/CSS cached for 1 year with immutable flag
+
+### Troubleshooting Cache Issues
+
+If you see old cached content:
+
+1. **Hard refresh**: `Ctrl+F5` (Windows/Linux) or `Cmd+Shift+R` (Mac)
+2. **Clear browser cache**: Settings → Clear browsing data
+3. **Incognito mode**: Test in private browsing
+4. **Redeploy**: Run `npm run deploy-clean`
+
+### Vercel Dashboard
+
+Monitor deployments at: [vercel.com/dashboard](https://vercel.com/dashboard)
+
 ## Deploy with Vercel
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fbaokhoavu%2Fportfolio&project-name=baokhoavu-portfolio&repository-name=portfolio&redirect-url=https%3A%2F%2Fgithub.com%2Fbaokhoavu%2Fportfolio&demo-title=Baokhoa%20Vu%20Portfolio&demo-description=Full-Stack%20Developer%20Portfolio&demo-url=https%3A%2F%2Fbaokhoavu-portfolio.vercel.app&demo-image=%2F%2Fraw.githubusercontent.com%2Fbaokhoavu%2Fportfolio%2Fmain%2Fpublic%2Fimages%2Fog%2Fhome.jpg)

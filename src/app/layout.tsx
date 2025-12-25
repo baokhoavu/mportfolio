@@ -6,6 +6,7 @@ import "@/app/media-overrides.css";
 import classNames from "classnames";
 
 import { Footer, Header, Providers, RouteGuard } from "@/components";
+import HealthCheck from "@/components/HealthCheck";
 import { baseURL, dataStyle, effects, fonts, home, style } from "@/resources";
 import {
   Background,
@@ -151,6 +152,7 @@ export default async function RootLayout({
               <RouteGuard>{children}</RouteGuard>
             </Flex>
           </Flex>
+          <HealthCheck />
           <Footer />
         </Column>
       </Providers>
