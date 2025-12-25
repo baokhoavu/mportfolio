@@ -28,15 +28,6 @@
     --neutral-background-weak: #f9f9f9;
     --neutral-background-medium: #f3f3f3;
     --neutral-background-strong: #e0e0e0;
-    --neutral-on-background-strong: #0a0a0a;
-    --neutral-on-background-medium: #757575;
-    --neutral-on-background-weak: #959595;
-
-    --page-background: #f9f9f9;
-    --surface-background: rgba(255, 255, 255, 0.8);
-
-    --brand-on-background-medium: #0279be;
-    --brand-on-background-strong: #0171a8;
 
     --font-size-body-m: 1rem;
     --line-height-body-m: 1.5rem;
@@ -71,66 +62,48 @@
       background-color: rgba(255, 255, 255, 0.95) !important;
     }
   }
-
-  /* Ensure text colors are visible */
-  html {
-    color: #0a0a0a !important;
-  }
-
-  body {
-    background-color: #f9f9f9 !important;
-  }
-
-  /* Ensure links are visible */
-  a:not(.button) {
-    color: #0279be !important;
-    text-decoration: none !important;
-  }
-
-  a:not(.button):hover {
-    color: #0171a8 !important;
-  }
-
-  /* Ensure headings are visible */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: #0a0a0a !important;
-  }
-
-  /* Ensure buttons and interactive elements are visible */
-  button,
-  [role="button"] {
-    background-color: #f3f3f3 !important;
-    color: #0a0a0a !important;
-    border: 1px solid #e0e0e0 !important;
-  }
-
-  /* Ensure form elements are visible */
-  input,
-  textarea,
-  select {
-    background-color: #ffffff !important;
-    color: #0a0a0a !important;
-    border: 1px solid #e0e0e0 !important;
-  }
 }
 
 /* General fallback for all browsers in case CSS variables fail */
 html {
-  color: #0a0a0a;
   font-family: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 16px;
   line-height: 1.5;
 }
 
 body {
-  background-color: #f9f9f9;
   margin: 0;
   padding: 0;
+}
+
+/* Force white text for dark theme */
+[data-theme="dark"] {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6,
+[data-theme="dark"] p,
+[data-theme="dark"] span,
+[data-theme="dark"] div {
+  color: #ffffff !important;
+}
+
+/* Ensure headings are white */
+[data-theme="dark"] .neutral-on-background-strong {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .neutral-on-background-medium {
+  color: #e0e0e0 !important;
+}
+
+[data-theme="dark"] .neutral-on-background-weak {
+  color: #b0b0b0 !important;
 }
 
 /* Ensure basic visibility for all elements */
@@ -207,12 +180,6 @@ body {
 }
 .neutral-background-medium {
   background-color: #f3f3f3;
-}
-.neutral-on-background-strong {
-  color: #0a0a0a;
-}
-.neutral-on-background-medium {
-  color: #757575;
 }
 
 /* Basic border fallbacks */
