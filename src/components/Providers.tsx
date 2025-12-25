@@ -25,7 +25,7 @@ import { iconLibrary } from "../resources/icons";
 function ForceDarkTheme() {
   const { setTheme } = useTheme();
   useEffect(() => {
-    setTheme('dark');
+    setTheme("dark");
   }, [setTheme]);
   return null;
 }

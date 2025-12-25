@@ -1,11 +1,6 @@
 import { Column, Text } from "@once-ui-system/core";
 
-interface PostsProps {
-  range?: [number, number];
-  columns?: string;
-}
-
-export function Posts({ range, columns }: PostsProps) {
+export function Posts() {
   return (
     <Column fillWidth horizontal="center" padding="24">
       <Text variant="body-default-l" onBackground="neutral-weak">

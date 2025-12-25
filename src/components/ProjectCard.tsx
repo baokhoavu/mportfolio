@@ -1,5 +1,6 @@
 "use client";
-import React, { type JSX } from "react";
+import type React from "react";
+import type { JSX } from "react";
 
 import {
   AvatarGroup,
@@ -10,8 +11,16 @@ import {
   SmartLink,
   Text,
 } from "@once-ui-system/core";
-import { SiNextdotjs, SiReact, SiTypescript, SiTailwindcss, SiVercel, SiGithubactions, SiContentful } from "react-icons/si";
 import { FaCode } from "react-icons/fa";
+import {
+  SiContentful,
+  SiGithubactions,
+  SiNextdotjs,
+  SiReact,
+  SiTailwindcss,
+  SiTypescript,
+  SiVercel,
+} from "react-icons/si";
 
 interface ProjectCardProps {
   href: string;
@@ -39,8 +48,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <Column fillWidth gap="m">
-      <Flex style={{ height: '100%' }}>
-        <div className="carousel-viewport-fix w-full h-full max-h-none overflow-hidden" style={{ flex: 1 }}>
+      <Flex style={{ height: "100%" }}>
+        <div
+          className="carousel-viewport-fix w-full h-full max-h-none overflow-hidden"
+          style={{ flex: 1 }}
+        >
           <Carousel
             sizes="(max-width: 960px) 100vw, 960px"
             items={Array.isArray(images) ? images.map((img) => ({ slide: img, alt: title })) : []}
@@ -61,9 +73,18 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               {title}
             </Heading>
             {technologies.length > 0 && (
-              <Flex gap="8" align="center" style={{ marginTop: 4, flexWrap: 'wrap' }}>
-                {(technologies.slice(0, 6)).map((tech) => (
-                  <span key={tech} title={tech} style={{ fontSize: 16, fontWeight: 500, padding: '0 8px', whiteSpace: 'nowrap' }}>
+              <Flex gap="8" align="center" style={{ marginTop: 4, flexWrap: "wrap" }}>
+                {technologies.slice(0, 6).map((tech) => (
+                  <span
+                    key={tech}
+                    title={tech}
+                    style={{
+                      fontSize: 16,
+                      fontWeight: 500,
+                      padding: "0 8px",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
                     {tech}
                   </span>
                 ))}

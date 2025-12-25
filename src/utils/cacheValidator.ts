@@ -10,18 +10,22 @@ export interface CacheValidationResult {
   timestamp: string;
 }
 
+// biome-ignore lint/complexity/noStaticOnlyClass: Utility class with static methods for cache validation
 export class CacheValidator {
   private static readonly GATSBY_INDICATORS = [
-    '[data-react-helmet]',
-    '.tl-edges',
+    "[data-react-helmet]",
+    ".tl-edges",
     '[data-testid="gatsby-focus-wrapper"]',
-    '.gatsby-image-wrapper'
+    ".gatsby-image-wrapper",
   ];
 
   private static readonly NEXTJS_INDICATORS = [
-    'next-root',
-    '[data-nextjs-scroll-focus-boundary]',
-    'next-head-count'
+    "next-root",
+    "[data-nextjs-scroll-focus-boundary]",
+    "next-head-count",
+    // Additional indicators for this specific Next.js app
+    'script[id="_R_"]', // Next.js script loader
+    'script[src*="_next/static/chunks"]', // Next.js chunk scripts
   ];
 
   /**
@@ -32,7 +36,7 @@ export class CacheValidator {
     const recommendations: string[] = [];
 
     // Check for Gatsby elements (old cached content)
-    const gatsbyElements = this.GATSBY_INDICATORS.filter(selector => {
+    const gatsbyElements = CacheValidator.GATSBY_INDICATORS.filter((selector) => {
       try {
         return document.querySelector(selector) !== null;
       } catch {
@@ -41,13 +45,13 @@ export class CacheValidator {
     });
 
     if (gatsbyElements.length > 0) {
-      issues.push(`Found ${gatsbyElements.length} Gatsby elements: ${gatsbyElements.join(', ')}`);
-      recommendations.push('Clear browser cache and hard refresh (Ctrl+F5)');
-      recommendations.push('Check Vercel deployment for cache issues');
+      issues.push(`Found ${gatsbyElements.length} Gatsby elements: ${gatsbyElements.join(", ")}`);
+      recommendations.push("Clear browser cache and hard refresh (Ctrl+F5)");
+      recommendations.push("Check Vercel deployment for cache issues");
     }
 
     // Check for Next.js elements (current content)
-    const nextElements = this.NEXTJS_INDICATORS.filter(selector => {
+    const nextElements = CacheValidator.NEXTJS_INDICATORS.filter((selector) => {
       try {
         return document.querySelector(selector) !== null;
       } catch {
@@ -56,54 +60,68 @@ export class CacheValidator {
     });
 
     if (nextElements.length === 0) {
-      issues.push('No Next.js elements detected - may be serving cached content');
-      recommendations.push('Verify current deployment is active');
+      issues.push("No Next.js elements detected - may be serving cached content");
+      recommendations.push("Verify current deployment is active");
+    }
+
+    // Additional check for Next.js static assets
+    const nextScripts = document.querySelectorAll('script[src*="_next/static"]');
+    const nextLinks = document.querySelectorAll('link[href*="_next/static"]');
+
+    if (nextScripts.length === 0 && nextLinks.length === 0) {
+      issues.push("No Next.js static assets found");
+      recommendations.push("Check if Next.js build assets are loading correctly");
     }
 
     // Check global objects
-    if (typeof (window as any).___gatsby !== 'undefined') {
-      issues.push('Gatsby global object detected');
-      recommendations.push('Force cache purge on Vercel');
+    if (typeof (window as any).___gatsby !== "undefined") {
+      issues.push("Gatsby global object detected");
+      recommendations.push("Force cache purge on Vercel");
     }
 
-    if (typeof (window as any).GATSBY !== 'undefined') {
-      issues.push('Gatsby configuration detected');
-      recommendations.push('Check deployment configuration');
+    if (typeof (window as any).GATSBY !== "undefined") {
+      issues.push("Gatsby configuration detected");
+      recommendations.push("Check deployment configuration");
     }
 
-    // Check for Next.js globals
-    if (typeof (window as any).__NEXT_DATA__ === 'undefined') {
-      issues.push('Next.js data not found');
-      recommendations.push('Verify Next.js build is correct');
+    // Check for Next.js globals - updated for App Router
+    const hasNextJsGlobals =
+      typeof (window as any).__NEXT_DATA__ !== "undefined" ||
+      typeof (window as any).__next_f !== "undefined" ||
+      (typeof self !== "undefined" && typeof (self as any).__next_f !== "undefined");
+
+    if (!hasNextJsGlobals) {
+      issues.push("Next.js data not found");
+      recommendations.push("Verify Next.js build is correct");
     }
 
     // Check health endpoint
     try {
-      const healthResponse = await fetch('/api/health', {
-        cache: 'no-store',
-        headers: { 'Cache-Control': 'no-cache' }
+      const healthResponse = await fetch("/api/health", {
+        cache: "no-store",
+        headers: { "Cache-Control": "no-cache" },
       });
 
       if (!healthResponse.ok) {
-        issues.push('Health check endpoint failed');
-        recommendations.push('Check API routes and deployment');
+        issues.push("Health check endpoint failed");
+        recommendations.push("Check API routes and deployment");
       } else {
         const healthData = await healthResponse.json();
         if (healthData.framework?.hasGatsbyElements) {
-          issues.push('Health check detected Gatsby elements');
-          recommendations.push('Redeploy with cache purge');
+          issues.push("Health check detected Gatsby elements");
+          recommendations.push("Redeploy with cache purge");
         }
       }
-    } catch (error) {
-      issues.push('Health check request failed');
-      recommendations.push('Check network connectivity and API status');
+    } catch (_error) {
+      issues.push("Health check request failed");
+      recommendations.push("Check network connectivity and API status");
     }
 
     return {
       isValid: issues.length === 0,
       issues,
       recommendations,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     };
   }
 
@@ -112,9 +130,9 @@ export class CacheValidator {
    */
   static forceRefresh(): void {
     // Clear all caches
-    if ('caches' in window) {
-      caches.keys().then(names => {
-        names.forEach(name => caches.delete(name));
+    if ("caches" in window) {
+      caches.keys().then((names) => {
+        names.forEach((name) => caches.delete(name));
       });
     }
 
@@ -122,11 +140,11 @@ export class CacheValidator {
     try {
       localStorage.clear();
     } catch (e) {
-      console.warn('Could not clear localStorage:', e);
+      console.warn("Could not clear localStorage:", e);
     }
 
     // Force reload bypassing cache
-    window.location.href = window.location.href + (window.location.href.includes('?') ? '&' : '?') + '_cache_bust=' + Date.now();
+    window.location.href = `${window.location.href}${window.location.href.includes("?") ? "&" : "?"}_cache_bust=${Date.now()}`;
   }
 
   /**
@@ -134,13 +152,13 @@ export class CacheValidator {
    */
   static async isContentFresh(): Promise<boolean> {
     try {
-      const response = await fetch('/api/health', {
-        cache: 'no-store',
-        headers: { 'Cache-Control': 'no-cache' }
+      const response = await fetch("/api/health", {
+        cache: "no-store",
+        headers: { "Cache-Control": "no-cache" },
       });
 
       const data = await response.json();
-      return !data.framework?.hasGatsbyElements && data.status === 'healthy';
+      return !data.framework?.hasGatsbyElements && data.status === "healthy";
     } catch {
       return false;
     }

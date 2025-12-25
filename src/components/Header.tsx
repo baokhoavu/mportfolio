@@ -8,7 +8,7 @@ import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
 
 import { about, blog, display, gallery, person, routes, work } from "@/resources";
 import styles from "./Header.module.scss";
-const ThemeToggle = dynamic(
+const _ThemeToggle = dynamic(
   () => import("./ThemeToggle").then((mod) => ({ default: mod.ThemeToggle })),
   { ssr: false },
 );

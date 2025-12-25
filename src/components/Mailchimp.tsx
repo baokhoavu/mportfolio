@@ -6,7 +6,10 @@ import type { SpacingToken, opacity } from "@once-ui-system/core";
 import { useState } from "react";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function debounce<T extends (...args: unknown[]) => void>(func: T, delay: number): (...args: Parameters<T>) => void {
+function debounce<T extends (...args: unknown[]) => void>(
+  func: T,
+  delay: number,
+): (...args: Parameters<T>) => void {
   let timeout: ReturnType<typeof setTimeout>;
   return (...args: Parameters<T>) => {
     clearTimeout(timeout);
@@ -38,10 +41,7 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
     }
   };
 
-  const debouncedHandleChange = debounce(
-    handleChange as (...args: unknown[]) => void,
-    2000,
-  );
+  const debouncedHandleChange = debounce(handleChange as (...args: unknown[]) => void, 2000);
 
   const handleBlur = () => {
     if (!validateEmail(email)) {

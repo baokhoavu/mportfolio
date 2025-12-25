@@ -16,13 +16,7 @@ export function Projects({ range, exclude }: ProjectsProps) {
   }
 
   // Custom order by slug
-  const customOrder = [
-    "neadless",
-    "koi",
-    "kristeenajs",
-    "bao-covid-map",
-    "portfolio"
-  ];
+  const customOrder = ["neadless", "koi", "kristeenajs", "bao-covid-map", "portfolio"];
   const sortedProjects = allProjects.sort((a, b) => {
     const aIndex = customOrder.indexOf(a.slug);
     const bIndex = customOrder.indexOf(b.slug);

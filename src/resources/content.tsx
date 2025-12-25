@@ -237,20 +237,28 @@ const about: About = {
         title: "",
         description: (
           <>
-            Full-stack engineer with 7+ years of experience building scalable web apps, cloud platforms, and integrations for startups, enterprise, and non-profit. Passionate about clean code, performance, and user experience.
+            Full-stack engineer with 7+ years of experience building scalable web apps, cloud
+            platforms, and integrations for startups, enterprise, and non-profit. Passionate about
+            clean code, performance, and user experience.
             <br />
             <br />
-            <strong>Languages &amp; Tools:</strong> C#, JavaScript (ES6+), TypeScript, Python, SQL, HTML5, CSS3/SCSS, Git, VS Code, Postman
+            <strong>Languages &amp; Tools:</strong> C#, JavaScript (ES6+), TypeScript, Python, SQL,
+            HTML5, CSS3/SCSS, Git, VS Code, Postman
             <br />
-            <strong>Frontend:</strong> React, Next.js, Redux, Angular, Angular Material, Vite, Tailwind CSS, Bootstrap, jQuery, Vue
+            <strong>Frontend:</strong> React, Next.js, Redux, Angular, Angular Material, Vite,
+            Tailwind CSS, Bootstrap, jQuery, Vue
             <br />
-            <strong>Backend:</strong> .NET, Node.js, Express, REST APIs, GraphQL, MongoDB, Mongoose, PostgreSQL, MySQL
+            <strong>Backend:</strong> .NET, Node.js, Express, REST APIs, GraphQL, MongoDB, Mongoose,
+            PostgreSQL, MySQL
             <br />
-            <strong>Cloud &amp; DevOps:</strong> Azure (ADO), AWS, GCP, Docker, Kubernetes, Vercel, CI/CD (GitHub Actions)
+            <strong>Cloud &amp; DevOps:</strong> Azure (ADO), AWS, GCP, Docker, Kubernetes, Vercel,
+            CI/CD (GitHub Actions)
             <br />
-            <strong>Data &amp; Visualization:</strong> Recharts, Mapbox, Tableau, Segment, Braze, Google Tag Manager, Azure Application Insights
+            <strong>Data &amp; Visualization:</strong> Recharts, Mapbox, Tableau, Segment, Braze,
+            Google Tag Manager, Azure Application Insights
             <br />
-            <strong>Platforms &amp; CMS:</strong> WordPress, Shopify, HubSpot, Contentful, Blackbaud Luminate
+            <strong>Platforms &amp; CMS:</strong> WordPress, Shopify, HubSpot, Contentful, Blackbaud
+            Luminate
           </>
         ),
         tags: [],
