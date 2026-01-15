@@ -1,3 +1,14 @@
+/* Header/Menu background fix */
+.Header, header, .menu, .navbar {
+  background: var(--neutral-background-weak, #f9f9f9) !important;
+}
+
+[data-theme="dark"] .Header,
+[data-theme="dark"] header,
+[data-theme="dark"] .menu,
+[data-theme="dark"] .navbar {
+  background: #18181b !important;
+}
 /* Firefox compatibility fixes for CSS custom properties */
 @supports (-moz-appearance: none) {
   /* Firefox-specific fallbacks for CSS custom properties */
