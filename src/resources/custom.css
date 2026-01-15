@@ -71,9 +71,17 @@ html {
   line-height: 1.5;
 }
 
-body {
+
+html, body {
   margin: 0;
   padding: 0;
+  background: var(--neutral-background-weak, #f9f9f9) !important;
+}
+
+/* Dark theme background */
+[data-theme="dark"] html,
+[data-theme="dark"] body {
+  background: #18181b !important;
 }
 
 /* Force white text for dark theme */
