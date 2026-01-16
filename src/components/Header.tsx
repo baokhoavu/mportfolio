@@ -80,7 +80,7 @@ export const Header = () => {
         <Row fillWidth horizontal="center">
           <Row
             background="page"
-            className={styles.page}
+            className={styles["page-background"]}
             border="neutral-alpha-weak"
             radius="m-4"
             shadow="l"
