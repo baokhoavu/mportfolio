@@ -9,7 +9,8 @@
 }
 
 .page-background {
-    background-color: var(--page-background) !important;
+    background-color: #000;
+    border: 1px solid #000;
 }
 
 @media (max-width: breakpoints.$s) {
