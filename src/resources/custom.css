@@ -1,5 +1,8 @@
 /* Header/Menu background fix */
-.Header, header, .menu, .navbar {
+.Header,
+header,
+.menu,
+.navbar {
   background: var(--neutral-background-weak, #f9f9f9) !important;
 }
 
@@ -82,8 +85,8 @@ html {
   line-height: 1.5;
 }
 
-
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   background: var(--neutral-background-weak, #f9f9f9) !important;
