@@ -8,6 +8,10 @@
     mask-size: 100% 100%;
 }
 
+.page {
+    background-color: var(--page-background) !important;
+}
+
 @media (max-width: breakpoints.$s) {
     .position {
         top: auto;
