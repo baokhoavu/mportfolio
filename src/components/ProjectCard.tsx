@@ -123,8 +123,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 style={{ margin: "0", width: "fit-content" }}
                 href={
                   githubPage
-                    ? `${process.env.NEXT_PUBLIC_GITHUB_URL?.replace(/\/?$/, "/")}${githubPage}`
-                    : process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/"
+                    ? `https://github.com/baokhoavu/${githubPage}`
+                    : "https://github.com/baokhoavu"
                 }
                 target="_blank"
                 rel="noopener noreferrer"
